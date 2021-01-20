@@ -6,7 +6,10 @@ User can be redirected directly to the article
 
 ### Tasks
 - [x] change way of showing feeds
+
 - [ ] add multiple language support
+
 - [ ] add key bindings
 
+- [ ] edit setup.py
 
