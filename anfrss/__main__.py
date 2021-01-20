@@ -1,40 +1,64 @@
+import os
 import sys
 from PyQt5.QtWidgets import (QApplication,
                              QMainWindow,
                              QPushButton,
                              QWidget,
                              QListWidget,
-                             QHBoxLayout,
-                             QMessageBox,
+                             QVBoxLayout,
+                             QLabel,
+                             QTextEdit,
+                             QSplitter,
                              )
 from PyQt5.QtGui import QFont, QIcon
-from PyQt5.QtCore import QCoreApplication, Qt
-from anffeed import ANFFeed
+from PyQt5.QtCore import QCoreApplication, Qt, pyqtSignal
+
+try:
+    from anffeed import ANFFeed
+except ImportError:
+    from .anffeed import ANFFeed
 
 
-def show_details(feeds):
-    pass
+DIR = os.getcwd()
+print(os.getcwd())
 
 
-class FeedWidgets(QWidget):
+class ArticleWidget(QWidget):
     def __init__(self, *args):
         super().__init__(*args)
-
-        self.setGeometry(10, 10, 1300, 500)
-        self.setWindowTitle('Feed Overview')
 
         self.initUi()
 
     def initUi(self):
-        vbox = QHBoxLayout(self)
+        self.hbox = QVBoxLayout(self)
+        self.setLayout(self.hbox)
+
+        self.label1 = QLabel('Your chosen Feed:')
+        self.hbox.addWidget(self.label1)
+
+        self.text = QTextEdit()
+        self.hbox.addWidget(self.text)
+
+
+class TitleWidget(QWidget):
+    TitleClicked = pyqtSignal([list])
+
+    def __init__(self, *args):
+        super().__init__(*args)
+
+        self.initUi()
+
+    def initUi(self):
+        self.hbox = QVBoxLayout(self)
+        self.setLayout(self.hbox)
 
         self.titleList = QListWidget()
         self.titleList.itemDoubleClicked.connect(self.onClicked)
-        self.titleList.setGeometry(0, 0, 400, 400)
+
         self.news = ANFFeed()
         for item in self.news.all_feeds:
             self.titleList.addItem(item[0])
-        vbox.addWidget(self.titleList)
+        self.hbox.addWidget(self.titleList)
 
     def onClicked(self, item):
         feeds = self.news.all_feeds
@@ -46,14 +70,15 @@ class FeedWidgets(QWidget):
         summary = feeds[id][1] + '\n\n'
         link = feeds[id][2]
 
-        QMessageBox.information(self, 'Details', summary + link)
+        self.TitleClicked.emit([summary, link])
 
 
 class ANFApp(QMainWindow):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, *args):
+        super().__init__(*args)
 
-        self.setWindowIcon(QIcon('anf.png'))
+        self.setWindowState(Qt.WindowMaximized)
+        self.setWindowIcon(QIcon(f'{DIR}/assets/anf.png'))
         self.setAutoFillBackground(True)
 
         self.anfInit()
@@ -62,14 +87,31 @@ class ANFApp(QMainWindow):
 
     def anfInit(self):
         self.setWindowTitle('ANF RSS Reader')
-        self.setWindowState(Qt.WindowMaximized)
-        FeedWidgets(self)
 
-        exitBtn = QPushButton(self)
-        exitBtn.setGeometry(600, 600, 100, 50)
-        exitBtn.setText('Exit')
-        exitBtn.setStyleSheet("background-color: red")
-        exitBtn.clicked.connect(self.exit)
+        self.central_widget = QSplitter()
+
+        self.title_widget = TitleWidget()
+        self.article_widget = ArticleWidget()
+
+        self.setCentralWidget(self.central_widget)
+
+        self.central_widget.addWidget(self.title_widget)
+        self.central_widget.addWidget(self.article_widget)
+
+        self.exitBtn = QPushButton(self)
+        self.exitBtn.setGeometry(600, 600, 100, 50)
+        self.exitBtn.setText('Exit')
+        self.exitBtn.setStyleSheet("background-color: red")
+        self.exitBtn.clicked.connect(self.exit)
+
+        self.title_widget.TitleClicked.connect(self.title_click)
+
+        self.show()
+
+    def title_click(self, feed):
+
+        self.article_widget.text.setText(feed[0])
+        self.article_widget.text.append(feed[1])
 
     def exit(self):
         QCoreApplication.instance().quit()

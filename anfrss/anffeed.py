@@ -1,6 +1,4 @@
 import feedparser
-import click
-
 
 LINK = 'https://anfdeutsch.com/feed.rss'
 
