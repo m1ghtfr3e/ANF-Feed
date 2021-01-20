@@ -5,9 +5,8 @@ User can be redirected directly to the article
 
 
 ### Tasks
-- [ ] change way of showing feeds
+- [x] change way of showing feeds
 - [ ] add multiple language support
 - [ ] add key bindings
 
 
-### Done
