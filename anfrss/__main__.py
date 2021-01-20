@@ -13,7 +13,7 @@ from PyQt5.QtWidgets import (QApplication,
                              QMenuBar,
                              )
 from PyQt5.QtGui import QFont, QIcon
-from PyQt5.QtCore import QCoreApplication, Qt, pyqtSignal
+from PyQt5.QtCore import Qt, pyqtSignal
 
 try:
     from anffeed import ANFFeed

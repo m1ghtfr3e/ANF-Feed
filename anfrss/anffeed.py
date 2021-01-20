@@ -1,3 +1,9 @@
+'''
+    Parsing Feeds from ANF News
+
+Core Module of package.
+'''
+
 import feedparser
 
 LINK = 'https://anfenglishmobile.com/feed.rss'
@@ -32,6 +38,14 @@ class ANFFeed:
         for i in self.entries:
             link.append(i.link)
         return link
+
+    @property
+    def detailed(self):
+        detailed = []
+        for i in self.entries:
+            detailed.append(i.summary_detail['value'])
+            print(i['value'])
+        return # NotImplementedYet
 
     @property
     def all_feeds(self):

@@ -11,5 +11,10 @@ User can be redirected directly to the article
 
 - [ ] add key bindings
 
+- [ ] add download function -> download chosen article
+
 - [ ] edit setup.py
+
+#### On core
+- [ ] add detailed feed contents
 
