@@ -5,10 +5,12 @@ from PyQt5.QtWidgets import (QApplication,
                              QPushButton,
                              QWidget,
                              QListWidget,
+                             QHBoxLayout,
                              QVBoxLayout,
                              QLabel,
                              QTextEdit,
                              QSplitter,
+                             QMenuBar,
                              )
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtCore import QCoreApplication, Qt, pyqtSignal
@@ -19,8 +21,8 @@ except ImportError:
     from .anffeed import ANFFeed
 
 
+# Get the current directory to set the Icon later.
 DIR = os.getcwd()
-print(os.getcwd())
 
 
 class ArticleWidget(QWidget):
@@ -33,8 +35,8 @@ class ArticleWidget(QWidget):
         self.hbox = QVBoxLayout(self)
         self.setLayout(self.hbox)
 
-        self.label1 = QLabel('Your chosen Feed:')
-        self.hbox.addWidget(self.label1)
+        self.label = QLabel('Your chosen Feed will be shown here:')
+        self.hbox.addWidget(self.label)
 
         self.text = QTextEdit()
         self.hbox.addWidget(self.text)
@@ -49,8 +51,11 @@ class TitleWidget(QWidget):
         self.initUi()
 
     def initUi(self):
-        self.hbox = QVBoxLayout(self)
+        self.hbox = QVBoxLayout()
         self.setLayout(self.hbox)
+
+        self.label = QLabel('Double Click on a title:')
+        self.hbox.addWidget(self.label)
 
         self.titleList = QListWidget()
         self.titleList.itemDoubleClicked.connect(self.onClicked)
@@ -95,26 +100,46 @@ class ANFApp(QMainWindow):
 
         self.setCentralWidget(self.central_widget)
 
+        self.menu_bar = QMenuBar()
+        self.actionEdit = self.menu_bar.addMenu('Edit')
+        self.actionDownload = self.menu_bar.addMenu('Download')
+        self.actionHelp = self.menu_bar.addMenu('Help')
+        self.central_widget.addWidget(self.menu_bar)
+
         self.central_widget.addWidget(self.title_widget)
         self.central_widget.addWidget(self.article_widget)
 
         self.exitBtn = QPushButton(self)
-        self.exitBtn.setGeometry(600, 600, 100, 50)
+        self.exitBtn.setGeometry(50, 600, 100, 55)
         self.exitBtn.setText('Exit')
         self.exitBtn.setStyleSheet("background-color: red")
         self.exitBtn.clicked.connect(self.exit)
 
+        # Catch Slot Signal from the TitleWidget
         self.title_widget.TitleClicked.connect(self.title_click)
 
         self.show()
 
     def title_click(self, feed):
+        '''
+            Signal Catcher
+        Catches the Slot Signal
+        of the
+        :class: TitleWidget
+        and sets the Text for the
+        :class: ArticleWidget;
 
+        :param feed: The Signal
+            in the TitleWidget
+            emits a list with
+            the contents;
+        type feed: list
+        '''
         self.article_widget.text.setText(feed[0])
         self.article_widget.text.append(feed[1])
 
     def exit(self):
-        QCoreApplication.instance().quit()
+        self.close()
 
 
 def main():

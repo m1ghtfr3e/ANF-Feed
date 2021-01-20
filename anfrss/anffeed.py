@@ -1,6 +1,6 @@
 import feedparser
 
-LINK = 'https://anfdeutsch.com/feed.rss'
+LINK = 'https://anfenglishmobile.com/feed.rss'
 
 
 class ANFFeed:
