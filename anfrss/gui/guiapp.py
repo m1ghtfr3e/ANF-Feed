@@ -16,8 +16,6 @@ the Github Repository:
  --> https://github.com/m1ghtfr3e/ANF-Feed-Reader
 '''
 
-
-
 import os
 import sys
 import qdarkstyle
@@ -40,9 +38,10 @@ try:
 except ImportError:
     from ..anffeed import ANFFeed
 
-
+from pathlib import Path
 # Get the current directory to set the Icon later.
-DIR = os.getcwd()
+DIR = Path(__file__).parents[1]
+print(DIR)
 
 
 class ArticleWidget(QWidget):
@@ -71,6 +70,7 @@ class ArticleWidget(QWidget):
         self.hbox.addWidget(self.label)
 
         self.text = QTextEdit()
+        self.text.setReadOnly(True)
         self.hbox.addWidget(self.text)
 
 
@@ -133,8 +133,9 @@ class TitleWidget(QWidget):
 
         summary = feeds[id][1] + '\n\n'
         link = feeds[id][2]
+        detailed = feeds[id][3]
 
-        self.TitleClicked.emit([summary, link])
+        self.TitleClicked.emit([summary, link, detailed])
 
 
 class ANFApp(QMainWindow):
@@ -151,6 +152,20 @@ class ANFApp(QMainWindow):
         self.show()
 
     def anfInit(self):
+        '''
+        Defines UI of the
+        :class: ANFApp
+            (Main Window)
+
+        Both, the Article
+        and the Title Widget
+        are organized inside
+        :class: QSplitter
+        Moreover there is:
+        :class: QMenuBar
+        :class: QPushButton
+            (Exit Button)
+        '''
         self.setWindowTitle('ANF RSS Reader')
 
         self.central_widget = QSplitter()
@@ -159,6 +174,8 @@ class ANFApp(QMainWindow):
         self.article_widget = ArticleWidget()
 
         self.setCentralWidget(self.central_widget)
+
+        self.statusBar()
 
         self.menu_bar = QMenuBar()
         self.actionEdit = self.menu_bar.addMenu('Edit')
@@ -177,6 +194,7 @@ class ANFApp(QMainWindow):
         self.exitBtn.setGeometry(50, 600, 100, 55)
         self.exitBtn.setText('Exit')
         self.exitBtn.setStyleSheet("background-color: red")
+        self.exitBtn.setStatusTip('Exit the Application')
         self.exitBtn.clicked.connect(self.exit)
 
         # Catch Slot Signal from the TitleWidget
@@ -199,8 +217,21 @@ class ANFApp(QMainWindow):
             the contents;
         type feed: list
         '''
+        # Title = feed[0]
+        # Link = feed[1]
+        # Detailed = feed[2]
+
+        # Set Title with Italic Font.
+        self.article_widget.text.setFontItalic(True)
         self.article_widget.text.setText(feed[0])
+        self.article_widget.text.setFontItalic(False)
+        # Underline & Append Link.
+        self.article_widget.text.setFontUnderline(True)
         self.article_widget.text.append(feed[1])
+        self.article_widget.text.setFontUnderline(False)
+        # Append Detailed
+        self.article_widget.text.append('\n\n')
+        self.article_widget.text.append(feed[2])
 
     def exit(self):
         ''' Exit the Application '''

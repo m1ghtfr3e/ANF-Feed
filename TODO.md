@@ -13,8 +13,12 @@ User can be redirected directly to the article
 
 - [ ] add download function -> download chosen article
 
-- [ ] edit setup.py
+- [x] edit setup.py
+
+- [ ] add entry to setup.py
+
+- [ ] fix directory of icon in packages
 
 #### On core
-- [ ] add detailed feed contents
-
+- [x] add detailed feed contents
+- [ ] Continue on download module
