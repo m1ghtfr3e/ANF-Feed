@@ -10,10 +10,15 @@ Feeds are from: https://anfenglishmobile.com/feed.rss
 
 Installation
 ------------
+
+- Via PyPi
 The easiest installation would be over PyPi, via ``pip``
 which is unfortunately not available right now, 
-but very soon.
+but very soon::
 
+  $ pip install anffeed
+
+- Alternative
 You can also install it with cloning this repository::
 
   $ git clone https://github.com/m1ghtfr3e/ANF-Feed-Reader.git
@@ -33,3 +38,12 @@ Usage
 After installation you have two options to start::
 
   $ python3 -m anfrss
+  
+  
+  
+Meta
+----
+:Authors:
+  m1ghtfr3e
+:Version:
+  0.0.1.dev1
