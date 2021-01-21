@@ -10,7 +10,26 @@ Feeds are from: https://anfenglishmobile.com/feed.rss
 
 Installation
 ------------
+The easiest installation would be over PyPi, via ``pip``
+which is unfortunately not available right now, 
+but very soon.
+
+You can also install it with cloning this repository::
+
+  $ git clone https://github.com/m1ghtfr3e/ANF-Feed-Reader.git
+  $ cd ANF-Feed-Reader
+  $ pip install -r requirements.txt
+  
+Optionally you can pip install it locally::
+
+  $ pip install .
+  
+  
+
 
 
 Usage
 -----
+After installation you have two options to start::
+
+  $ python3 -m anfrss
