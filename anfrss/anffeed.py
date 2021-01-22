@@ -7,14 +7,15 @@ Core Module of package.
 import feedparser
 import re
 
-LINK = 'https://anfenglishmobile.com/feed.rss'
+ENGLISH = 'https://anfenglishmobile.com/feed.rss'
+GERMAN = 'https://anfdeutsch.com/feed.rss'
 HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 
 class ANFFeed:
     def __init__(self):
         try:
-            self.feed = feedparser.parse(LINK)
+            self.feed = feedparser.parse(ENGLISH)
         except :
             raise Error
 
@@ -54,7 +55,7 @@ class ANFFeed:
     def all_feeds(self):
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
-    def download_article(self, article, file='html'):
+    def download_article(self, article, dir, file='html'):
         '''
             Download Article
 
@@ -64,6 +65,9 @@ class ANFFeed:
 
         :param article: The
             article to write
+        :param dir: Directory
+            to write to
+        :type dir: str
         :param file: The desired
             file type to write
         :type file: str, default
@@ -73,7 +77,6 @@ class ANFFeed:
 
         raise NotImplementedError()
 
+
 if __name__ == '__main__':
-    feed = ANFFeed()
-    art = feed.entries[0]
-    feed.download_article(art)
+    pass

@@ -29,6 +29,9 @@ from PyQt5.QtWidgets import (QApplication,
                              QTextEdit,
                              QSplitter,
                              QMenuBar,
+                             QMessageBox,
+                             QDialog,
+                             QAction,
                              )
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtCore import Qt, pyqtSignal
@@ -41,7 +44,6 @@ except ImportError:
 from pathlib import Path
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
-print(DIR)
 
 
 class ArticleWidget(QWidget):
@@ -146,6 +148,8 @@ class ANFApp(QMainWindow):
         self.setWindowState(Qt.WindowMaximized)
         self.setWindowIcon(QIcon(f'{DIR}/assets/anf.png'))
         self.setAutoFillBackground(True)
+        self.setWindowTitle('ANF RSS Reader')
+        self.statusBar()
 
         self.anfInit()
 
@@ -166,16 +170,12 @@ class ANFApp(QMainWindow):
         :class: QPushButton
             (Exit Button)
         '''
-        self.setWindowTitle('ANF RSS Reader')
-
         self.central_widget = QSplitter()
 
         self.title_widget = TitleWidget()
         self.article_widget = ArticleWidget()
 
         self.setCentralWidget(self.central_widget)
-
-        self.statusBar()
 
         self.menu_bar = QMenuBar()
         self.actionEdit = self.menu_bar.addMenu('Edit')
@@ -185,6 +185,11 @@ class ANFApp(QMainWindow):
         self.actionEdit.addAction('Settings')
         self.actionDownload = self.menu_bar.addMenu('Download')
         self.actionHelp = self.menu_bar.addMenu('Help')
+        self.actionLang = self.menu_bar.addMenu('Language')
+        self.actionLang.addAction('german')
+        self.actionLang.addAction('english')
+        self.actionLang.addAction('kurdish')
+        self.actionLang.addAction('french')
         self.central_widget.addWidget(self.menu_bar)
 
         self.central_widget.addWidget(self.title_widget)

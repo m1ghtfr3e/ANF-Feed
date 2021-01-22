@@ -5,20 +5,27 @@ User can be redirected directly to the article
 
 
 ### Tasks
-- [x] change way of showing feeds
+- [x] Change way of showing feeds
 
-- [ ] add multiple language support
+- [ ] Add multiple language support
 
-- [ ] add key bindings
+- [ ] Add key bindings
 
-- [ ] add download function -> download chosen article
+- [ ] Add download function -> download chosen article
 
-- [x] edit setup.py
+- [x] Edit setup.py
 
-- [ ] add entry to setup.py
+- [ ] Add entry to setup.py
 
-- [ ] fix directory of icon in packages
+- [ ] Fix directory of icon in packages
+
+- [ ] Add logging for core and gui
+
+- [ ] Add testing
+
+- [ ] Add Github workflow
 
 #### On core
-- [x] add detailed feed contents
+- [x] Add detailed feed contents
+
 - [ ] Continue on download module
