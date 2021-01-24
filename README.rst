@@ -2,6 +2,10 @@
     :target: https://travis-ci.com/m1ghtfr3e/ANF-Feed
 
 .. image:: https://img.shields.io/github/license/m1ghtfr3e/ANF-Feed?style=plastic
+    :alt: License
+
+.. image:: https://img.shields.io/pypi/wheel/ANF-Feed?style=plastic   
+    :alt: PyPI - Wheel
 
 ===============
 ANF Feed Reader
@@ -29,14 +33,19 @@ The easiest installation would be over PyPi, via ``pip``
 which is unfortunately not available right now,
 but very soon::
 
-  $ pip install anffeed
+  $ pip install ANF-Feed
 
-- Alternative
+- Cloning this Repo
 
 You can also install it with cloning this repository::
 
-  $ git clone https://github.com/m1ghtfr3e/ANF-Feed-Reader.git
-  $ cd ANF-Feed-Reader
+  $ git clone https://github.com/m1ghtfr3e/ANF-Feed.git
+  
+  or via Github CLI:
+  
+  $ gh repo clone m1ghtfr3e/ANF-Feed
+
+  $ cd ANF-Feed
   $ pip install -r requirements.txt
 
 Optionally you can pip install it locally::
@@ -52,6 +61,10 @@ After installation you have two options to start:
 - Calling the __main__ of the package::
 
   $ python3 -m anfrss
+  
+  or
+  
+  $ python -m anfrss
 
 - Or using the entry point. In this case you can
   just enter::
@@ -66,4 +79,4 @@ Meta
 :Authors:
   m1ghtfr3e
 :Version:
-  0.0.1.dev1
+  0.0.1.dev3
