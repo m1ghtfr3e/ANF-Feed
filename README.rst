@@ -7,6 +7,15 @@ from `ANFNews <https://anfenglishmobile.com>`__
 
 Feeds are from: https://anfenglishmobile.com/feed.rss
 
+Currently following languages are supported:
+  - English (default)
+  - German
+  - Kurdish
+  - Spanish
+  - Arab
+  
+  *Languages can be changed during usage in the Menu Bar
+  (left upper corner of the window)*
 
 Installation
 ------------
@@ -29,15 +38,21 @@ Optionally you can pip install it locally::
 
   $ pip install .
   
-  
-
 
 
 Usage
 -----
-After installation you have two options to start::
+After installation you have two options to start:
+
+- Calling the __main__ of the package::
 
   $ python3 -m anfrss
+  
+- Or using the entry point. In this case you can
+  just enter::
+  
+  $ anfrss
+  
   
   
   
