@@ -10,8 +10,9 @@ Supports several languages:
 ( More languages available soon. )
 '''
 
-import feedparser
 import re
+import feedparser
+
 
 ENGLISH = 'https://anfenglishmobile.com/feed.rss'
 GERMAN = 'https://anfdeutsch.com/feed.rss'
@@ -22,14 +23,23 @@ HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 
 class ANFFeed:
+    '''
+        ANF Feed Parser
+
+    :param source:
+        Link to set;
+        Depending on chosen
+        Language;
+    :type source: str
+    '''
 
     source = ENGLISH
 
     def __init__(self):
         try:
             self.feed = feedparser.parse(self.source)
-        except NameError as e:
-            raise e
+        except NameError:
+            raise NameError
 
         self.entries = self.feed.entries
 
@@ -59,6 +69,7 @@ class ANFFeed:
 
     @property
     def title(self):
+        ''' Titles Attribute '''
         titles = []
         for i in self.entries:
             titles.append(i.title)
@@ -66,6 +77,7 @@ class ANFFeed:
 
     @property
     def summary(self):
+        ''' Summary Attribute '''
         summary = []
         for i in self.entries:
             summary.append(i.summary)
@@ -73,6 +85,7 @@ class ANFFeed:
 
     @property
     def detailed(self):
+        ''' Detailed Attribute '''
         detailed = []
         for i in self.entries:
             text = i.content[0]['value']
@@ -82,6 +95,7 @@ class ANFFeed:
 
     @property
     def link(self):
+        ''' Links Attribute '''
         links = []
         for i in self.entries:
             links.append(i.link)
@@ -89,29 +103,31 @@ class ANFFeed:
 
     @property
     def all_feeds(self):
+        ''' All Feeds Attribute '''
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
-    def download_article(self, article, dir, file='html'):
-        '''
-            Download Article
 
-        Requests a chosen article
-        and writes it to a file
-        (default: HTML).
+def download_article(article, target, file='html'):
+    '''
+        Download Article
 
-        :param article: The
-            article to write
-        :param dir: Directory
-            to write to
-        :type dir: str
-        :param file: The desired
-            file type to write
-        :type file: str, default
-        '''
-        if file != 'html':
-            raise NotImplementedError()
+    Requests a chosen article
+    and writes it to a file
+    (default: HTML).
 
+    :param article: The
+        article to write
+    :param dir: Directory
+        to write to
+    :type dir: str
+    :param file: The desired
+        file type to write
+    :type file: str, default
+    '''
+    if file != 'html':
         raise NotImplementedError()
+
+    raise NotImplementedError()
 
 
 if __name__ == '__main__':
