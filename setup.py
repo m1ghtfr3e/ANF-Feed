@@ -8,7 +8,7 @@ with open('README.rst', 'r', encoding='utf-8') as fh:
 
 
 setuptools.setup(
-    name='ANFFeed',
+    name='ANF-Feed',
     version='0.0.1.dev1',
     author='m1ghtfr3e',
     description='Read ANF Feeds',

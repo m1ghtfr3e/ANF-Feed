@@ -16,7 +16,6 @@ the Github Repository:
  --> https://github.com/m1ghtfr3e/ANF-Feed-Reader
 '''
 
-import os
 import sys
 import qdarkstyle
 from PyQt5.QtWidgets import (QApplication,
@@ -30,10 +29,8 @@ from PyQt5.QtWidgets import (QApplication,
                              QSplitter,
                              QMenuBar,
                              QMessageBox,
-                             QDialog,
-                             QAction,
                              )
-from PyQt5.QtGui import QFont, QIcon
+from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal
 
 try:
@@ -116,6 +113,10 @@ class TitleWidget(QWidget):
         self.newsFeed()
 
     def newsFeed(self, language=None):
+        '''
+            Set ANF Feeds
+        :class: ANFFeed
+        '''
         self.news = ANFFeed()
         if language:
             self.news.set_language(language)
@@ -217,6 +218,16 @@ class ANFApp(QMainWindow):
         self.show()
 
     def languageAction(self, lang):
+        '''
+            Change Language
+        Changing the Language
+        of the Feeds if Menu
+        Option is hovered.
+
+        :param lang: The Language
+            Text given by Menu Option
+        :type lang: PyQt obj
+        '''
         self.title_widget.titleList.clear()
         self.title_widget.newsFeed(lang.text())
         self.title_widget.update()
@@ -258,6 +269,9 @@ class ANFApp(QMainWindow):
 
 
 def run():
+    '''
+        Run the App
+    '''
     app = QApplication(sys.argv)
     app.setStyle('breeze')
     #app.setStyleSheet(qdarkstyle.load_stylesheet())
