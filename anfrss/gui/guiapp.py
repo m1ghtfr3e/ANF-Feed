@@ -197,7 +197,7 @@ class ANFApp(QMainWindow):
         self.actionLang.addAction('english')
         self.actionLang.addAction('kurmanjî')
         self.actionLang.addAction('spanish')
-        self.actionLang.triggered.connect(self.languageAction)
+        self.actionLang.hovered.connect(self.languageAction)
         self.central_widget.addWidget(self.menu_bar)
 
         self.central_widget.addWidget(self.title_widget)

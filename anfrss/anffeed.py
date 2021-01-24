@@ -2,6 +2,12 @@
     Parsing Feeds from ANF News
 
 Core Module of package.
+Supports several languages:
+- English
+- German
+- Kurmanji
+- Spanish
+( More languages available soon. )
 '''
 
 import feedparser
@@ -43,7 +49,7 @@ class ANFFeed:
         elif language == 'spanish':
             cls.source = SPANISH
         else:
-            return 'Not Implemented Yet'
+            raise NotImplementedError()
 
     @property
     def title(self):
