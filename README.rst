@@ -1,12 +1,27 @@
-.. image:: https://travis-ci.com/m1ghtfr3e/ANF-Feed.svg?branch=main
+.. -*- mode: rst -*-
+
+|Travis| |License|
+
+.. |Travis| image:: https://travis-ci.com/m1ghtfr3e/ANF-Feed.svg?branch=main
     :target: https://travis-ci.com/m1ghtfr3e/ANF-Feed
-
-.. image:: https://img.shields.io/github/license/m1ghtfr3e/ANF-Feed?style=plastic
+ 
+.. |License| image:: https://img.shields.io/github/license/m1ghtfr3e/ANF-Feed?style=plastic
     :alt: License
-
+  
 .. image:: https://img.shields.io/pypi/wheel/ANF-Feed?style=plastic   
     :alt: PyPI - Wheel
-
+ 
+.. image:: https://img.shields.io/github/repo-size/m1ghtfr3e/ANF-Feed?style=plastic   
+    :alt: GitHub repo size
+   
+.. image:: https://img.shields.io/maintenance/yes/2021?style=plastic   
+    :alt: Maintenance
+    
+.. image:: https://img.shields.io/pypi/status/ANF-Feed?style=plastic  
+    :alt: PyPI - Status
+    
+.. image:: https://img.shields.io/github/v/release/m1ghtfr3e/ANF-Feed?color=purple&include_prereleases&style=plastic   
+    :alt: GitHub release (latest by date including pre-releases)
 
 ========
 ANF Feed 
