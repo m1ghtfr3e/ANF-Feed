@@ -1,5 +1,7 @@
 .. image:: https://travis-ci.com/m1ghtfr3e/ANF-Feed.svg?branch=main
     :target: https://travis-ci.com/m1ghtfr3e/ANF-Feed
+ 
+.. image:: https://img.shields.io/github/license/m1ghtfr3e/ANF-Feed?style=plastic
 
 ===============
 ANF Feed Reader
