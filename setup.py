@@ -18,6 +18,9 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=REQUIRED,
     include_package_data = True,
+    data_files=[
+        ('', ['assets/*'])
+    ],
     license='GPLv3',
     classifiers=[
         'Programming Language :: Python :: 3',

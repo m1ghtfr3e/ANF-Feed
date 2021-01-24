@@ -9,17 +9,41 @@ import re
 
 ENGLISH = 'https://anfenglishmobile.com/feed.rss'
 GERMAN = 'https://anfdeutsch.com/feed.rss'
+KURMANJI = 'https://anfkurdi.com/feed.rss'
+SPANISH = 'https://anfespanol.com/feed.rss'
 HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 
 class ANFFeed:
+
+    source = ENGLISH
+
     def __init__(self):
         try:
-            self.feed = feedparser.parse(ENGLISH)
-        except :
-            raise Error
+            self.feed = feedparser.parse(self.source)
+        except NameError as e:
+            raise e
 
         self.entries = self.feed.entries
+
+    @classmethod
+    def set_language(cls, language):
+        '''
+            Set language of link
+
+        :param language: Language to set
+        :type language: str
+        '''
+        if language == 'english':
+            cls.source = ENGLISH
+        elif language == 'german':
+            cls.source = GERMAN
+        elif language == 'kurmanjî':
+            cls.source = KURMANJI
+        elif language == 'spanish':
+            cls.source = SPANISH
+        else:
+            return 'Not Implemented Yet'
 
     @property
     def title(self):
@@ -36,13 +60,6 @@ class ANFFeed:
         return summary
 
     @property
-    def link(self):
-        link = []
-        for i in self.entries:
-            link.append(i.link)
-        return link
-
-    @property
     def detailed(self):
         detailed = []
         for i in self.entries:
@@ -50,6 +67,13 @@ class ANFFeed:
             text = HTML_TAG.sub('', text)       # Remove Html Tags
             detailed.append(text)
         return detailed
+
+    @property
+    def link(self):
+        links = []
+        for i in self.entries:
+            links.append(i.link)
+        return links
 
     @property
     def all_feeds(self):

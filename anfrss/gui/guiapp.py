@@ -45,6 +45,8 @@ from pathlib import Path
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
 
+LANGUAGE = 'german'
+
 
 class ArticleWidget(QWidget):
     '''
@@ -111,7 +113,12 @@ class TitleWidget(QWidget):
         self.titleList = QListWidget()
         self.titleList.itemDoubleClicked.connect(self.onClicked)
 
+        self.newsFeed()
+
+    def newsFeed(self, language=None):
         self.news = ANFFeed()
+        if language:
+            self.news.set_language(language)
         for item in self.news.all_feeds:
             self.titleList.addItem(item[0])
             self.titleList.addItem('')
@@ -188,8 +195,9 @@ class ANFApp(QMainWindow):
         self.actionLang = self.menu_bar.addMenu('Language')
         self.actionLang.addAction('german')
         self.actionLang.addAction('english')
-        self.actionLang.addAction('kurdish')
-        self.actionLang.addAction('french')
+        self.actionLang.addAction('kurmanjî')
+        self.actionLang.addAction('spanish')
+        self.actionLang.triggered.connect(self.languageAction)
         self.central_widget.addWidget(self.menu_bar)
 
         self.central_widget.addWidget(self.title_widget)
@@ -206,6 +214,11 @@ class ANFApp(QMainWindow):
         self.title_widget.TitleClicked.connect(self.title_click)
 
         self.show()
+
+    def languageAction(self, lang):
+        self.title_widget.titleList.clear()
+        self.title_widget.newsFeed(lang.text())
+        self.title_widget.update()
 
     def title_click(self, feed):
         '''
