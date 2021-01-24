@@ -10,7 +10,7 @@ Feeds are from: https://anfenglishmobile.com/feed.rss
 Currently following languages are supported:
   - English (default)
   - German
-  - Kurdish
+  - Kurmanjî
   - Spanish
   - Arab
   
