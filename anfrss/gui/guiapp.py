@@ -28,7 +28,6 @@ from PyQt5.QtWidgets import (QApplication,
                              QTextEdit,
                              QSplitter,
                              QMenuBar,
-                             QMessageBox,
                              )
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal
@@ -41,8 +40,6 @@ except ImportError:
 from pathlib import Path
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
-
-LANGUAGE = 'german'
 
 
 class ArticleWidget(QWidget):
