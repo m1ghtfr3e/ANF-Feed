@@ -197,6 +197,7 @@ class ANFApp(QMainWindow):
         self.actionLang.addAction('english')
         self.actionLang.addAction('kurmanjî')
         self.actionLang.addAction('spanish')
+        self.actionLang.addAction('arab')
         self.actionLang.hovered.connect(self.languageAction)
         self.central_widget.addWidget(self.menu_bar)
 
@@ -262,3 +263,8 @@ def run():
     #app.setStyleSheet(qdarkstyle.load_stylesheet())
     window = ANFApp()
     sys.exit(app.exec_())
+
+
+
+if __name__ == '__main__':
+    run()

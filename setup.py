@@ -8,7 +8,7 @@ with open('README.rst', 'r', encoding='utf-8') as fh:
 
 
 setuptools.setup(
-    name='ANF Feed Reader',
+    name='ANFFeed',
     version='0.0.1.dev1',
     author='m1ghtfr3e',
     description='Read ANF Feeds',
@@ -21,6 +21,11 @@ setuptools.setup(
     data_files=[
         ('', ['assets/*'])
     ],
+    entry_points={
+        'console_scripts':[
+            'anfrss = anfrss.gui.guiapp:run'
+        ]
+    },
     license='GPLv3',
     classifiers=[
         'Programming Language :: Python :: 3',

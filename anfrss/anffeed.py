@@ -17,6 +17,7 @@ ENGLISH = 'https://anfenglishmobile.com/feed.rss'
 GERMAN = 'https://anfdeutsch.com/feed.rss'
 KURMANJI = 'https://anfkurdi.com/feed.rss'
 SPANISH = 'https://anfespanol.com/feed.rss'
+ARAB = 'https://anfarabic.com/feed.rss'
 HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 
@@ -48,7 +49,12 @@ class ANFFeed:
             cls.source = KURMANJI
         elif language == 'spanish':
             cls.source = SPANISH
+        elif language == 'arab':
+            cls.source = ARAB
         else:
+            # We should not reach this
+            # as the GUI just shows
+            # available options
             raise NotImplementedError()
 
     @property
