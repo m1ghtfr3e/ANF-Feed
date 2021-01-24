@@ -7,11 +7,13 @@
 .. image:: https://img.shields.io/pypi/wheel/ANF-Feed?style=plastic   
     :alt: PyPI - Wheel
 
-===============
-ANF Feed Reader
-===============
 
-This is an Application to get and read RSS Feeds
+========
+ANF Feed 
+========
+
+
+This is an Application to read RSS Feeds
 from `ANFNews <https://anfenglishmobile.com>`__
 
 Currently following languages are supported:
