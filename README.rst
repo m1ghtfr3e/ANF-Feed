@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.com/m1ghtfr3e/ANF-Feed.svg?branch=main
+    :target: https://travis-ci.com/m1ghtfr3e/ANF-Feed
+
 ===============
 ANF Feed Reader
 ===============
