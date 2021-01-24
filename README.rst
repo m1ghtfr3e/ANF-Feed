@@ -1,6 +1,6 @@
 .. -*- mode: rst -*-
 
-|Travis| |Wheel| |GithubRepo|
+|Travis| |Wheel| |GithubRepo| |GithubRelease|
 
 |License| |Maintenance| |PyPiStatus|
 
