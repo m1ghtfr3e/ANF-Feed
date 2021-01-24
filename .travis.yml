@@ -8,3 +8,5 @@ python:
 # Install dependencies:
 install:
         - pip install -r requirements.txt
+script:
+        python3 anfrss || python anfrss
