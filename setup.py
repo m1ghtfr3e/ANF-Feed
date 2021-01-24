@@ -1,7 +1,8 @@
 import setuptools
 
-# Set Up Meta Data
-REQUIRED = ['feedparser', 'QtPy', 'QDarkStyle']
+
+with open('requirements.txt', 'r', encoding='utf-8') as fh:
+    required = fh.read()
 
 with open('README.rst', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
@@ -9,18 +10,15 @@ with open('README.rst', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='ANF-Feed',
-    version='0.0.1.dev1',
+    version='0.0.1.dev3',
     author='m1ghtfr3e',
     description='Read ANF Feeds',
     keywords='anf, feed, rss',
     long_description=long_description,
     url='https://github.com/m1ghtfr3e/ANF-Feed-Reader',
     packages=setuptools.find_packages(),
-    install_requires=REQUIRED,
+    install_requires=required,
     include_package_data = True,
-    data_files=[
-        ('', ['assets/*'])
-    ],
     entry_points={
         'console_scripts':[
             'anfrss = anfrss.gui.guiapp:run'

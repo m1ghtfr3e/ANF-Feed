@@ -7,7 +7,7 @@ User can be redirected directly to the article
 ### Tasks
 - [x] Change way of showing feeds
 
-- [ ] Add multiple language support
+- [x] Add multiple language support
 
 - [ ] Add key bindings
 
@@ -15,9 +15,9 @@ User can be redirected directly to the article
 
 - [x] Edit setup.py
 
-- [ ] Add entry to setup.py
+- [x] Add entry to setup.py
 
-- [ ] Fix directory of icon in packages
+- [x] Fix directory of icon in packages
 
 - [ ] Add logging for core and gui
 
