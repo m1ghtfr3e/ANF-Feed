@@ -1,6 +1,6 @@
 .. -*- mode: rst -*-
 
-|Travis| |Wheel| |GithubRepo| |GithubRelease|
+|Travis| |Wheel| |GithubRepo| |GithubRelease| |PyPiPackage|
 
 |License| |Maintenance| |PyPiStatus|
 
@@ -24,6 +24,9 @@
     
 .. |GithubRelease| image:: https://img.shields.io/github/v/release/m1ghtfr3e/ANF-Feed?color=purple&include_prereleases&style=plastic   
     :alt: GitHub release (latest by date including pre-releases)
+    
+.. |PyPiPackage| image:: https://badge.fury.io/py/ANF-Feed.svg
+    :target: https://badge.fury.io/py/ANF-Feed
 
 ========
 ANF Feed 
