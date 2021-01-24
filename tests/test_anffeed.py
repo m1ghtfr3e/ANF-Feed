@@ -4,7 +4,7 @@ from anfrss import anffeed
 FEED = anffeed.ANFFeed()
 
 
-class TestAnfFeedSetLanguage(unittest.TestCase):
+class TestSetLanguage(unittest.TestCase):
 
     feed = anffeed.ANFFeed()
 
