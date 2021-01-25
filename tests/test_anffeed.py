@@ -1,7 +1,24 @@
 import unittest
+import requests
 from anfrss import anffeed
 
-FEED = anffeed.ANFFeed()
+
+class TestLinkIsActive(unittest.TestCase):
+
+    def test_english_connection(self):
+        self.assertTrue(requests.get(anffeed.ENGLISH))
+
+    def test_german_connection(self):
+        self.assertTrue(requests.get(anffeed.GERMAN))
+
+    def test_kurmanji_connection(self):
+        self.assertTrue(requests.get(anffeed.KURMANJI))
+
+    def test_spanish_connection(self):
+        self.assertTrue(requests.get(anffeed.SPANISH))
+
+    def test_arab_connection(self):
+        self.assertTrue(requests.get(anffeed.ARAB))
 
 
 class TestSetLanguage(unittest.TestCase):

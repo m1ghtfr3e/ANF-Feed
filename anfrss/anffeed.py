@@ -107,28 +107,45 @@ class ANFFeed:
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
 
-def download_article(article, target, file='html'):
-    '''
-        Download Article
+    def download_article(self, ident, target, file='html'):
+        '''
+            Download Article
 
-    Requests a chosen article
-    and writes it to a file
-    (default: HTML).
+        Requests a chosen article
+        and writes it to a file
+        (default: HTML).
 
-    :param article: The
-        article to write
-    :param dir: Directory
-        to write to
-    :type dir: str
-    :param file: The desired
-        file type to write
-    :type file: str, default
-    '''
-    if file != 'html':
-        raise NotImplementedError()
+        :param ident: Identifier;
+            Can be link or title
+            which will identify
+            the article to down-
+            load
+        :type ident: str
+        :param target: Directory
+            to write to
+        :type target: str
+        :param file: The desired
+            file type to write
+        :type file: str, default
+        '''
 
-    raise NotImplementedError()
+        import requests
+
+        # Try first if ident is a link
+        # If not it's the title
+        try:
+            content = requests.get(ident)
+            print(content)
+        except Exception as missing_schema:
+            print(missing_schema)
+        finally:
+            pass
+
+
+        #raise NotImplementedError()
 
 
 if __name__ == '__main__':
-    pass
+    f = ANFFeed()
+    link = f.link[0]
+    print(f.download_article(link, ''))
