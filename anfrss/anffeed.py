@@ -106,7 +106,6 @@ class ANFFeed:
         ''' All Feeds Attribute '''
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
-
     def download_article(self, ident, target, file='html'):
         '''
             Download Article
@@ -140,7 +139,6 @@ class ANFFeed:
             print(missing_schema)
         finally:
             pass
-
 
         raise NotImplementedError()
 

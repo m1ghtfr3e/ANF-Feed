@@ -27,7 +27,10 @@ class TestSetLanguage(unittest.TestCase):
 
     def test_english(self):
         self.feed.set_language('english')
-        self.assertEqual(self.feed.source, 'https://anfenglishmobile.com/feed.rss')
+        self.assertEqual(
+            self.feed.source,
+            'https://anfenglishmobile.com/feed.rss'
+        )
 
     def test_german(self):
         # Set Language

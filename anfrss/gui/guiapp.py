@@ -271,10 +271,9 @@ def run():
     '''
     app = QApplication(sys.argv)
     app.setStyle('breeze')
-    #app.setStyleSheet(qdarkstyle.load_stylesheet())
+    # app.setStyleSheet(qdarkstyle.load_stylesheet())
     window = ANFApp()
     sys.exit(app.exec_())
-
 
 
 if __name__ == '__main__':
