@@ -1,8 +1,11 @@
+import os
+import sys
 import setuptools
 
+here = os.path.abspath(os.path.dirname(__file__))
 
-with open('requirements.txt', 'r', encoding='utf-8') as fh:
-    required = fh.read()
+sys.path.insert(0, here)
+
 
 with open('README.rst', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
@@ -17,7 +20,7 @@ setuptools.setup(
     long_description=long_description,
     url='https://github.com/m1ghtfr3e/ANF-Feed-Reader',
     packages=setuptools.find_packages(),
-    install_requires=required,
+    install_requires=['requests', 'PyQt5', 'feedparser', 'qdarkstyle'],
     include_package_data = True,
     entry_points={
         'console_scripts':[

@@ -45,3 +45,9 @@ class TestSetLanguage(unittest.TestCase):
     def test_arab(self):
         self.feed.set_language('arab')
         self.assertEqual(self.feed.source, 'https://anfarabic.com/feed.rss')
+
+
+class TestHtmlRegex(unittest.TestCase):
+    def test(self):
+        template = '<a href="test.link">Link</a>'
+        self.assertEqual(anffeed.HTML_TAG.sub('', template), 'Link')

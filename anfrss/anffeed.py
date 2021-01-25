@@ -142,10 +142,8 @@ class ANFFeed:
             pass
 
 
-        #raise NotImplementedError()
+        raise NotImplementedError()
 
 
 if __name__ == '__main__':
-    f = ANFFeed()
-    link = f.link[0]
-    print(f.download_article(link, ''))
+    pass
