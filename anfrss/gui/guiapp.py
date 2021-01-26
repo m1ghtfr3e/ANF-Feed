@@ -1,5 +1,6 @@
 '''
     GUI Module for ANF Feed Reader
+    ==============================
 
 The run() - Function is the main function.
 It is also imported by the __init__ so
@@ -14,10 +15,12 @@ contributing and else you may visit
 the Github Repository:
 
  --> https://github.com/m1ghtfr3e/ANF-Feed-Reader
+
+ Containing classes:
+    - :class: ANFApp
+    - :class: ArticleWidget
+    - :class: TitleWidget
 '''
-
-from __future__ import absolute_import
-
 
 import sys
 from pathlib import Path
@@ -162,7 +165,15 @@ class TitleWidget(QWidget):
 
 
 class ANFApp(QMainWindow):
-    ''' Main Window '''
+    ''' Main Window
+
+    All other Widgets and
+    Elements are organized.
+
+    Referring objets:
+        - :class: TitleWidget
+        - :class: ArticleWidget
+    '''
     def __init__(self, *args):
         super().__init__(*args)
 
@@ -277,13 +288,18 @@ class ANFApp(QMainWindow):
         self.article_widget.text.append(feed[2])
 
     def exit(self):
-        ''' Exit the Application '''
+        '''
+        Exit the Application
+        '''
         self.close()
 
 
 def run():
     '''
         Run the App
+
+    Default Style is set
+    to "Breeze"
     '''
     app = QApplication(sys.argv)
     app.setStyle('breeze')

@@ -1,5 +1,6 @@
 '''
     Parsing Feeds from ANF News
+    ===========================
 
 Core Module of package.
 Supports several languages:
