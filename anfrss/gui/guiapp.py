@@ -46,9 +46,9 @@ except ImportError:
     pass
 
 try:
-    from anffeed import ANFFeed
+    from ..parser.anffeed import ANFFeed
 except ImportError:
-    from ..anffeed import ANFFeed
+    from ..parser.anffeed import ANFFeed
 
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
@@ -293,4 +293,4 @@ def run():
 
 
 if __name__ == '__main__':
-    run()
+    pass

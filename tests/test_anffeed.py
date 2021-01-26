@@ -1,6 +1,6 @@
 import unittest
 import requests
-from anfrss import anffeed
+from anfrss.parser import anffeed
 
 
 class TestLinkIsActive(unittest.TestCase):

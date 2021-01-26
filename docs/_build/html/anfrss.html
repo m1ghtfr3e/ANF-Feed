@@ -41,7 +41,7 @@
 <li class="toctree-l1"><a class="reference internal" href="anfrss.gui.html">anfrss.gui package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="anfrss.gui.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="anfrss.gui.html#anfrss-gui-guiapp-module">anfrss.gui.guiapp module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="anfrss.gui.html#module-anfrss.gui">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anfrss.gui.html#module-contents">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -52,114 +52,6 @@
 </div>
 <div class="section" id="anfrss-anffeed-module">
 <h2>anfrss.anffeed module<a class="headerlink" href="#anfrss-anffeed-module" title="Permalink to this headline">¶</a></h2>
-<p>Core Module of package.
-Supports several languages:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>English</p></li>
-<li><p>German</p></li>
-<li><p>Kurmanji</p></li>
-<li><p>Spanish</p></li>
-</ul>
-</div></blockquote>
-<p>( More languages available soon. )</p>
-<dl class="field-list simple">
-<dt class="field-odd">class</dt>
-<dd class="field-odd"><p>ANFFeed</p>
-</dd>
-</dl>
-<p>See docs of containing class/es
-to learn more about.</p>
-<dl class="py class">
-<dt id="anfrss.anffeed.ANFFeed">
-<em class="property">class </em><code class="sig-prename descclassname">anfrss.anffeed.</code><code class="sig-name descname">ANFFeed</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<blockquote>
-<div><p>ANF Feed Parser</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>source</strong> (<em>str</em>) – Link to set;
-Depending on chosen
-Language;</p>
-</dd>
-</dl>
-<dl class="py attribute">
-<dt id="anfrss.anffeed.ANFFeed.source">
-<code class="sig-name descname">source</code><em class="property"> = 'https://anfenglishmobile.com/feed.rss'</em><a class="headerlink" href="#anfrss.anffeed.ANFFeed.source" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.set_language">
-<em class="property">classmethod </em><code class="sig-name descname">set_language</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">language</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.anffeed.ANFFeed.set_language" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Set language of link</p>
-</div></blockquote>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>language</strong> (<em>str</em>) – Language to set</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.title">
-<em class="property">property </em><code class="sig-name descname">title</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed.title" title="Permalink to this definition">¶</a></dt>
-<dd><p>Titles Attribute</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.summary">
-<em class="property">property </em><code class="sig-name descname">summary</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed.summary" title="Permalink to this definition">¶</a></dt>
-<dd><p>Summary Attribute</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.detailed">
-<em class="property">property </em><code class="sig-name descname">detailed</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed.detailed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Detailed Attribute</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.link">
-<em class="property">property </em><code class="sig-name descname">link</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed.link" title="Permalink to this definition">¶</a></dt>
-<dd><p>Links Attribute</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.all_feeds">
-<em class="property">property </em><code class="sig-name descname">all_feeds</code><a class="headerlink" href="#anfrss.anffeed.ANFFeed.all_feeds" title="Permalink to this definition">¶</a></dt>
-<dd><p>All Feeds Attribute</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="anfrss.anffeed.ANFFeed.download_article">
-<code class="sig-name descname">download_article</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ident</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">'html'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.anffeed.ANFFeed.download_article" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Download Article</p>
-</div></blockquote>
-<p>Requests a chosen article
-and writes it to a file
-(default: HTML).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>ident</strong> (<em>str</em>) – Identifier;
-Can be link or title
-which will identify
-the article to down-
-load</p></li>
-<li><p><strong>target</strong> (<em>str</em>) – Directory
-to write to</p></li>
-<li><p><strong>file</strong> (<em>str</em><em>, </em><em>default</em>) – The desired
-file type to write</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
 </div>
 <div class="section" id="module-anfrss">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-anfrss" title="Permalink to this headline">¶</a></h2>
