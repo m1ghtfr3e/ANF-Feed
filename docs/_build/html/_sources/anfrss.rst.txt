@@ -8,17 +8,7 @@ Subpackages
    :maxdepth: 4
 
    anfrss.gui
-
-Submodules
-----------
-
-anfrss.anffeed module
----------------------
-
-.. automodule:: anfrss.anffeed
-   :members:
-   :undoc-members:
-   :show-inheritance:
+   anfrss.parser
 
 Module contents
 ---------------
