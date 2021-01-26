@@ -21,9 +21,9 @@ setuptools.setup(
     url='https://github.com/m1ghtfr3e/ANF-Feed-Reader',
     packages=setuptools.find_packages(),
     install_requires=['requests', 'PyQt5', 'feedparser', 'qdarkstyle'],
-    include_package_data = True,
+    include_package_data=True,
     entry_points={
-        'console_scripts':[
+        'console_scripts': [
             'anfrss = anfrss.gui.guiapp:run'
         ]
     },
@@ -36,7 +36,7 @@ setuptools.setup(
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary',
-        ],
+    ],
     python_requires='>=3',
     project_urls={
         'Source': 'https://github.com/m1ghtfr3e/ANF-Feed-Reader',

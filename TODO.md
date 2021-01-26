@@ -19,13 +19,9 @@ User can be redirected directly to the article
 
 - [x] Fix directory of icon in packages
 
-- [ ] Add logging for core and gui
+- [x] Add testing
 
-- [ ] Add testing
-
-- [ ] Add Github workflow
-
-#### On core
+### Core
 - [x] Add detailed feed contents
 
 - [ ] Continue on download module
