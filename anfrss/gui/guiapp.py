@@ -16,8 +16,11 @@ the Github Repository:
  --> https://github.com/m1ghtfr3e/ANF-Feed-Reader
 '''
 
+from __future__ import absolute_import
+
+
 import sys
-import qdarkstyle
+from pathlib import Path
 from PyQt5.QtWidgets import (QApplication,
                              QMainWindow,
                              QPushButton,
@@ -28,16 +31,25 @@ from PyQt5.QtWidgets import (QApplication,
                              QTextEdit,
                              QSplitter,
                              QMenuBar,
+                             QScrollArea,
                              )
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import Qt, pyqtSignal
+
+# Import qdarkstyle
+# If not available
+#  -> just pass
+try:
+    import qdarkstyle
+except ImportError:
+    print('qdarkstyle not installed! "pip install qdarkstyle"')
+    pass
 
 try:
     from anffeed import ANFFeed
 except ImportError:
     from ..anffeed import ANFFeed
 
-from pathlib import Path
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
 
@@ -53,6 +65,8 @@ class ArticleWidget(QWidget):
     '''
     def __init__(self, *args):
         super().__init__(*args)
+
+        self.setGeometry(0, 0, 400, 600)
 
         self.initUi()
 
@@ -90,6 +104,8 @@ class TitleWidget(QWidget):
 
     def __init__(self, *args):
         super().__init__(*args)
+
+        self.setGeometry(0, 0, 350, 600)
 
         self.initUi()
 

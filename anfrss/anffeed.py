@@ -3,11 +3,16 @@
 
 Core Module of package.
 Supports several languages:
-- English
-- German
-- Kurmanji
-- Spanish
+    - English
+    - German
+    - Kurmanji
+    - Spanish
 ( More languages available soon. )
+
+:class: ANFFeed
+
+See docs of containing class/es
+to learn more about.
 '''
 
 import re
@@ -69,7 +74,8 @@ class ANFFeed:
 
     @property
     def title(self):
-        ''' Titles Attribute '''
+        ''' Titles Attribute
+        '''
         titles = []
         for i in self.entries:
             titles.append(i.title)
@@ -77,7 +83,8 @@ class ANFFeed:
 
     @property
     def summary(self):
-        ''' Summary Attribute '''
+        ''' Summary Attribute
+        '''
         summary = []
         for i in self.entries:
             summary.append(i.summary)
@@ -85,7 +92,8 @@ class ANFFeed:
 
     @property
     def detailed(self):
-        ''' Detailed Attribute '''
+        ''' Detailed Attribute
+        '''
         detailed = []
         for i in self.entries:
             text = i.content[0]['value']
@@ -95,7 +103,8 @@ class ANFFeed:
 
     @property
     def link(self):
-        ''' Links Attribute '''
+        ''' Links Attribute
+        '''
         links = []
         for i in self.entries:
             links.append(i.link)
@@ -103,7 +112,8 @@ class ANFFeed:
 
     @property
     def all_feeds(self):
-        ''' All Feeds Attribute '''
+        ''' All Feeds Attribute
+        '''
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
     def download_article(self, ident, target, file='html'):
