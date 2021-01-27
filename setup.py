@@ -11,16 +11,24 @@ with open('README.rst', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 
+Requires = [
+    'feedparser',
+    'requests',
+    'PyQt5',
+    'qdarkstyle',
+]
+
+
 setuptools.setup(
     name='ANF-Feed',
-    version='0.0.1.dev3',
+    version='0.0.1',
     author='m1ghtfr3e',
     description='Read ANF Feeds',
     keywords='anf, feed, rss',
     long_description=long_description,
     url='https://github.com/m1ghtfr3e/ANF-Feed-Reader',
     packages=setuptools.find_packages(),
-    install_requires=['requests', 'PyQt5', 'feedparser', 'qdarkstyle'],
+    install_requires=Requires,
     include_package_data=True,
     entry_points={
         'console_scripts': [
@@ -30,10 +38,11 @@ setuptools.setup(
     license='GPLv3',
     classifiers=[
         'Programming Language :: Python :: 3',
-        'Development Status :: 1 - Planning',
+        'Development Status :: 3 - Alpha',
+        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+
         'Environment :: X11 Applications :: Qt',
         'Intended Audience :: Other Audience',
-        'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content :: News/Diary',
     ],
