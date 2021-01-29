@@ -97,7 +97,7 @@ Usage
 
   $ python -m anfrss dark
 
-  or::
+  or:
 
   $ anfrss dark
 
