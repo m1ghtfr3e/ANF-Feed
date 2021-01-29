@@ -51,15 +51,15 @@ Installation
 
 - Via PyPi
 
-The easiest installation would be over PyPi, via ``pip``
+**The easiest installation would be over PyPi, via ``pip``
 which is unfortunately not available right now,
-but very soon::
+but very soon**::
 
   $ pip install ANF-Feed
 
 - Cloning this Repo
 
-You can also install it with cloning this repository::
+**You can also install it with cloning this repository**::
 
   $ git clone https://github.com/m1ghtfr3e/ANF-Feed.git
 
@@ -70,7 +70,7 @@ You can also install it with cloning this repository::
   $ cd ANF-Feed
   $ pip install -r requirements.txt
 
-Optionally you can pip install it locally::
+**Optionally you can pip install it locally**::
 
   $ pip install .
 
@@ -78,7 +78,7 @@ Optionally you can pip install it locally::
 
 Usage
 -----
-After installation you have two options to start:
+**After installation you have two options to start**:
 
 - Calling the __main__ of the package::
 
@@ -93,7 +93,7 @@ After installation you have two options to start:
 
   $ anfrss
 
-- There is also a Dark Mode which can be used::
+**There is also a Dark Mode which can be used**::
 
   $ python -m anfrss dark
 
@@ -104,8 +104,8 @@ After installation you have two options to start:
 
 Issues / Bugs / Problems
 ------------------------
-Open an Issue preferably on the
-`Issue Tracker of the GitHub Repository`_.
+**Open an Issue preferably on the
+`Issue Tracker of the GitHub Repository`_.**
 
 .. _Issue Tracker of the GitHub Repository: https://github.com/m1ghtfr3e/ANF-Feed/issues
 
