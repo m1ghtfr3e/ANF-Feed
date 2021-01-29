@@ -49,7 +49,7 @@ Currently following languages are supported:
 Installation
 ------------
 
-- Via PyPi
+- **Via PyPi**
 
 The easiest installation would be over PyPi, via ``pip``
 which is unfortunately not available right now,
@@ -57,7 +57,7 @@ but very soon::
 
   $ pip install ANF-Feed
 
-- Cloning this Repo
+- **Cloning this Repo**
 
 You can also install it with cloning this repository::
 
@@ -78,13 +78,13 @@ Optionally you can pip install it locally::
 
 Usage
 -----
-After installation you have two options to start:
+**After installation you have two options to start**:
 
 - Calling the __main__ of the package::
 
   $ python3 -m anfrss
 
-  or
+  or::
 
   $ python -m anfrss
 
@@ -93,18 +93,18 @@ After installation you have two options to start:
 
   $ anfrss
 
-- There is also a Dark Mode which can be used::
+**There is also a Dark Mode which can be used**::
 
   $ python -m anfrss dark
 
-  or
+  or:
 
   $ anfrss dark
 
 
 Issues / Bugs / Problems
 ------------------------
-Open an Issue preferably on the
+**Open an Issue preferably on the**
 `Issue Tracker of the GitHub Repository`_.
 
 .. _Issue Tracker of the GitHub Repository: https://github.com/m1ghtfr3e/ANF-Feed/issues
