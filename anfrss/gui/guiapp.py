@@ -124,7 +124,7 @@ class TitleWidget(QWidget):
         self.hbox.addWidget(self.label)
 
         self.titleList = QListWidget()
-        self.titleList.itemDoubleClicked.connect(self.onClicked)
+        self.titleList.itemPressed.connect(self.onClicked)
 
         self.newsFeed()
 
@@ -177,6 +177,14 @@ class ANFApp(QMainWindow):
     Referring objets:
         - :class: TitleWidget
         - :class: ArticleWidget
+
+    General Layout:
+        - QStatusBar
+        - QSplitter()
+            - TitleWidget
+            - ArticleWidget
+        - QMenuBar
+        - QPushButton (Exit)
     '''
     def __init__(self, *args):
         super().__init__(*args)

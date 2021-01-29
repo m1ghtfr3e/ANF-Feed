@@ -6,30 +6,30 @@
 
 .. |Travis| image:: https://travis-ci.com/m1ghtfr3e/ANF-Feed.svg?branch=main
     :target: https://travis-ci.com/m1ghtfr3e/ANF-Feed
- 
+
 .. |License| image:: https://img.shields.io/github/license/m1ghtfr3e/ANF-Feed?style=plastic
     :alt: License
-  
-.. |Wheel| image:: https://img.shields.io/pypi/wheel/ANF-Feed?style=plastic   
+
+.. |Wheel| image:: https://img.shields.io/pypi/wheel/ANF-Feed?style=plastic
     :alt: PyPI - Wheel
- 
-.. |GithubRepo| image:: https://img.shields.io/github/repo-size/m1ghtfr3e/ANF-Feed?style=plastic   
+
+.. |GithubRepo| image:: https://img.shields.io/github/repo-size/m1ghtfr3e/ANF-Feed?style=plastic
     :alt: GitHub repo size
-   
-.. |Maintenance| image:: https://img.shields.io/maintenance/yes/2021?style=plastic   
+
+.. |Maintenance| image:: https://img.shields.io/maintenance/yes/2021?style=plastic
     :alt: Maintenance
-    
-.. |PyPiStatus| image:: https://img.shields.io/pypi/status/ANF-Feed?style=plastic  
+
+.. |PyPiStatus| image:: https://img.shields.io/pypi/status/ANF-Feed?style=plastic
     :alt: PyPI - Status
-    
-.. |GithubRelease| image:: https://img.shields.io/github/v/release/m1ghtfr3e/ANF-Feed?color=purple&include_prereleases&style=plastic   
+
+.. |GithubRelease| image:: https://img.shields.io/github/v/release/m1ghtfr3e/ANF-Feed?color=purple&include_prereleases&style=plastic
     :alt: GitHub release (latest by date including pre-releases)
-    
+
 .. |PyPiPackage| image:: https://badge.fury.io/py/ANF-Feed.svg
     :target: https://badge.fury.io/py/ANF-Feed
 
 ========
-ANF Feed 
+ANF Feed
 ========
 
 
@@ -62,9 +62,9 @@ but very soon::
 You can also install it with cloning this repository::
 
   $ git clone https://github.com/m1ghtfr3e/ANF-Feed.git
-  
+
   or via Github CLI:
-  
+
   $ gh repo clone m1ghtfr3e/ANF-Feed
 
   $ cd ANF-Feed
@@ -83,9 +83,9 @@ After installation you have two options to start:
 - Calling the __main__ of the package::
 
   $ python3 -m anfrss
-  
+
   or
-  
+
   $ python -m anfrss
 
 - Or using the entry point. In this case you can
@@ -93,6 +93,21 @@ After installation you have two options to start:
 
   $ anfrss
 
+- There is also a Dark Mode which can be used::
+
+  $ python -m anfrss dark
+
+  or
+
+  $ anfrss dark
+
+
+Issues / Bugs / Problems
+------------------------
+Open an Issue preferably on the
+`Issue Tracker of the GitHub Repository`_.
+
+.. _Issue Tracker of the GitHub Repository: https://github.com/m1ghtfr3e/ANF-Feed/issues
 
 
 
@@ -101,4 +116,4 @@ Meta
 :Authors:
   m1ghtfr3e
 :Version:
-  0.0.1.dev3
+  0.0.1
