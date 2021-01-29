@@ -104,8 +104,8 @@ Usage
 
 Issues / Bugs / Problems
 ------------------------
-**Open an Issue preferably on the
-`Issue Tracker of the GitHub Repository`_.**
+**Open an Issue preferably on the**
+`Issue Tracker of the GitHub Repository`_.
 
 .. _Issue Tracker of the GitHub Repository: https://github.com/m1ghtfr3e/ANF-Feed/issues
 
