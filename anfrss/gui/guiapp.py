@@ -86,6 +86,8 @@ class ArticleWidget(QWidget):
 
         self.text = QTextEdit()
         self.text.setReadOnly(True)
+        font = QFont('Times', 12)
+        self.text.setFont(font)
         self.hbox.addWidget(self.text)
 
 
