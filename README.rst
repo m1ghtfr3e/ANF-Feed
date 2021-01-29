@@ -84,7 +84,7 @@ After installation you have two options to start:
 
   $ python3 -m anfrss
 
-  or
+  or::
 
   $ python -m anfrss
 
@@ -97,7 +97,7 @@ After installation you have two options to start:
 
   $ python -m anfrss dark
 
-  or
+  or::
 
   $ anfrss dark
 
