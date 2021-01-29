@@ -36,7 +36,7 @@ from PyQt5.QtWidgets import (QApplication,
                              QMenuBar,
                              QScrollArea,
                              )
-from PyQt5.QtGui import QIcon
+from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtCore import Qt, pyqtSignal
 
 # Import qdarkstyle
@@ -134,11 +134,15 @@ class TitleWidget(QWidget):
         :class: ANFFeed
         '''
         self.news = ANFFeed()
+
         if language:
             self.news.set_language(language)
         for item in self.news.all_feeds:
             self.titleList.addItem(item[0])
             self.titleList.addItem('')
+            font = QFont('Times')
+            font.setBold(True)
+            self.titleList.setFont(font)
         self.hbox.addWidget(self.titleList)
 
     def onClicked(self, item):
@@ -294,7 +298,7 @@ class ANFApp(QMainWindow):
         self.close()
 
 
-def run():
+def run(*args):
     '''
         Run the App
 
@@ -302,8 +306,12 @@ def run():
     to "Breeze"
     '''
     app = QApplication(sys.argv)
-    app.setStyle('breeze')
-    # app.setStyleSheet(qdarkstyle.load_stylesheet())
+
+    for arg in args:
+        if 'dark' in arg:
+            app.setStyleSheet(qdarkstyle.load_stylesheet())
+        else:
+            app.setStyle('breeze')
     window = ANFApp()
     sys.exit(app.exec_())
 

@@ -10,6 +10,8 @@ so there are two options to start this script:
     - $ anfrss
 '''
 
+import sys
+
 
 try:
     from gui import run
@@ -18,4 +20,4 @@ except ImportError:
 
 
 if __name__ == '__main__':
-    run()
+    run(sys.argv)
