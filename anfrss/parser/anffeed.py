@@ -1,6 +1,6 @@
 '''
-    Parsing Feeds from ANF News
-    ===========================
+Parsing Feeds from ANF News
+##########################
 
 Core Module of package.
 Supports several languages:
@@ -30,7 +30,8 @@ HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 class ANFFeed:
     '''
-        ANF Feed Parser
+    ANF Feed Parser
+    ===============
 
     :param source:
         Link to set;
@@ -52,7 +53,8 @@ class ANFFeed:
     @classmethod
     def set_language(cls, language):
         '''
-            Set language of link
+        Set language of link
+        ====================
 
         :param language: Language to set
         :type language: str
@@ -75,7 +77,9 @@ class ANFFeed:
 
     @property
     def title(self):
-        ''' Titles Attribute
+        '''
+        Titles Attribute
+        ================
         '''
         titles = []
         for i in self.entries:
@@ -84,7 +88,9 @@ class ANFFeed:
 
     @property
     def summary(self):
-        ''' Summary Attribute
+        '''
+        Summary Attribute
+        =================
         '''
         summary = []
         for i in self.entries:
@@ -93,7 +99,9 @@ class ANFFeed:
 
     @property
     def detailed(self):
-        ''' Detailed Attribute
+        '''
+        Detailed Attribute
+        ==================
         '''
         detailed = []
         for i in self.entries:
@@ -104,7 +112,9 @@ class ANFFeed:
 
     @property
     def link(self):
-        ''' Links Attribute
+        '''
+        Links Attribute
+        ===============
         '''
         links = []
         for i in self.entries:
@@ -113,13 +123,16 @@ class ANFFeed:
 
     @property
     def all_feeds(self):
-        ''' All Feeds Attribute
+        '''
+        All Feeds Attribute
+        ===================
         '''
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
     def download_article(self, ident, target, file='html'):
         '''
-            Download Article
+        Download Article
+        ===============
 
         Requests a chosen article
         and writes it to a file

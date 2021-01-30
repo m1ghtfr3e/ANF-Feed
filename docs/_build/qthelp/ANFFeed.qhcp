@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QHelpCollectionProject version="1.0">
+    <assistant>
+        <title>ANF Feed 0.0.1.dev3 documentation</title>
+        <homePage>qthelp://org.sphinx.anffeed/doc/index.html</homePage>
+        <startPage>qthelp://org.sphinx.anffeed/doc/index.html</startPage>
+    </assistant>
+    <docFiles>
+        <generate>
+            <file>
+                <input>ANFFeed.qhp</input>
+                <output>ANFFeed.qch</output>
+            </file>
+        </generate>
+        <register>
+            <file>ANFFeed.qch</file>
+        </register>
+    </docFiles>
+</QHelpCollectionProject>

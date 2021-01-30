@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QtHelpProject version="1.0">
+    <namespace>org.sphinx.anffeed</namespace>
+    <virtualFolder>doc</virtualFolder>
+    <customFilter name="ANF Feed ">
+        <filterAttribute>ANFFeed</filterAttribute>
+        <filterAttribute></filterAttribute>
+    </customFilter>
+    <filterSection>
+        <filterAttribute>ANFFeed</filterAttribute>
+        <filterAttribute></filterAttribute>
+        <toc>
+            <section title="ANF Feed 0.0.1.dev3 documentation" ref="index.html">
+                <section title="anfrss" ref="modules.html">
+                    <section title="anfrss package" ref="anfrss.html">
+                        <section title="Subpackages" ref="anfrss.html#subpackages">
+                            <section title="anfrss.gui package" ref="anfrss.gui.html">
+                                <section title="Submodules" ref="anfrss.gui.html#submodules"/>
+                                <section title="anfrss.gui.guiapp module" ref="anfrss.gui.html#anfrss-gui-guiapp-module"/>
+                                <section title="Module contents" ref="anfrss.gui.html#module-anfrss.gui"/>
+                            </section>
+                            <section title="anfrss.parser package" ref="anfrss.parser.html">
+                                <section title="Submodules" ref="anfrss.parser.html#submodules"/>
+                                <section title="anfrss.parser.anffeed module" ref="anfrss.parser.html#anfrss-parser-anffeed-module"/>
+                                <section title="Module contents" ref="anfrss.parser.html#module-anfrss.parser"/>
+                            </section>
+                        </section>
+                        <section title="Module contents" ref="anfrss.html#module-anfrss"/>
+                    </section>
+                </section>
+                <section title="Python Module Index" ref="py-modindex.html"/>
+            </section>
+        </toc>
+        <keywords>
+            <keyword name="all_feeds() (anfrss.parser.anffeed.ANFFeed property)" id="anfrss.parser.anffeed.ANFFeed.all_feeds" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.all_feeds"/>
+            <keyword name="ANFApp (class in anfrss.gui.guiapp)" id="anfrss.gui.guiapp.ANFApp" ref="anfrss.gui.html#anfrss.gui.guiapp.ANFApp"/>
+            <keyword name="ANFFeed (class in anfrss.parser.anffeed)" id="anfrss.parser.anffeed.ANFFeed" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed"/>
+            <keyword name="anfInit() (anfrss.gui.guiapp.ANFApp method)" id="anfrss.gui.guiapp.ANFApp.anfInit" ref="anfrss.gui.html#anfrss.gui.guiapp.ANFApp.anfInit"/>
+            <keyword name="module" ref="anfrss.html#module-anfrss"/>
+            <keyword name="module" ref="anfrss.gui.html#module-anfrss.gui"/>
+            <keyword name="module" ref="anfrss.parser.html#module-anfrss.parser"/>
+            <keyword name="ArticleWidget (class in anfrss.gui.guiapp)" id="anfrss.gui.guiapp.ArticleWidget" ref="anfrss.gui.html#anfrss.gui.guiapp.ArticleWidget"/>
+            <keyword name="detailed() (anfrss.parser.anffeed.ANFFeed property)" id="anfrss.parser.anffeed.ANFFeed.detailed" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.detailed"/>
+            <keyword name="download_article() (anfrss.parser.anffeed.ANFFeed method)" id="anfrss.parser.anffeed.ANFFeed.download_article" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.download_article"/>
+            <keyword name="exit() (anfrss.gui.guiapp.ANFApp method)" id="anfrss.gui.guiapp.ANFApp.exit" ref="anfrss.gui.html#anfrss.gui.guiapp.ANFApp.exit"/>
+            <keyword name="initUi() (anfrss.gui.guiapp.ArticleWidget method)" id="anfrss.gui.guiapp.ArticleWidget.initUi" ref="anfrss.gui.html#anfrss.gui.guiapp.ArticleWidget.initUi"/>
+            <keyword name="initUi() (anfrss.gui.guiapp.TitleWidget method)" id="anfrss.gui.guiapp.TitleWidget.initUi" ref="anfrss.gui.html#anfrss.gui.guiapp.TitleWidget.initUi"/>
+            <keyword name="languageAction() (anfrss.gui.guiapp.ANFApp method)" id="anfrss.gui.guiapp.ANFApp.languageAction" ref="anfrss.gui.html#anfrss.gui.guiapp.ANFApp.languageAction"/>
+            <keyword name="link() (anfrss.parser.anffeed.ANFFeed property)" id="anfrss.parser.anffeed.ANFFeed.link" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.link"/>
+            <keyword name="anfrss" ref="anfrss.html#module-anfrss"/>
+            <keyword name="anfrss.gui" ref="anfrss.gui.html#module-anfrss.gui"/>
+            <keyword name="anfrss.parser" ref="anfrss.parser.html#module-anfrss.parser"/>
+            <keyword name="newsFeed() (anfrss.gui.guiapp.TitleWidget method)" id="anfrss.gui.guiapp.TitleWidget.newsFeed" ref="anfrss.gui.html#anfrss.gui.guiapp.TitleWidget.newsFeed"/>
+            <keyword name="onClicked() (anfrss.gui.guiapp.TitleWidget method)" id="anfrss.gui.guiapp.TitleWidget.onClicked" ref="anfrss.gui.html#anfrss.gui.guiapp.TitleWidget.onClicked"/>
+            <keyword name="run() (in module anfrss.gui.guiapp)" ref="anfrss.gui.html#anfrss.gui.guiapp.run"/>
+            <keyword name="set_language() (anfrss.parser.anffeed.ANFFeed class method)" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.set_language"/>
+            <keyword name="source (anfrss.parser.anffeed.ANFFeed attribute)" id="anfrss.parser.anffeed.ANFFeed.source" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.source"/>
+            <keyword name="summary() (anfrss.parser.anffeed.ANFFeed property)" id="anfrss.parser.anffeed.ANFFeed.summary" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.summary"/>
+            <keyword name="title() (anfrss.parser.anffeed.ANFFeed property)" id="anfrss.parser.anffeed.ANFFeed.title" ref="anfrss.parser.html#anfrss.parser.anffeed.ANFFeed.title"/>
+            <keyword name="title_click() (anfrss.gui.guiapp.ANFApp method)" id="anfrss.gui.guiapp.ANFApp.title_click" ref="anfrss.gui.html#anfrss.gui.guiapp.ANFApp.title_click"/>
+            <keyword name="TitleClicked (anfrss.gui.guiapp.TitleWidget attribute)" id="anfrss.gui.guiapp.TitleWidget.TitleClicked" ref="anfrss.gui.html#anfrss.gui.guiapp.TitleWidget.TitleClicked"/>
+            <keyword name="TitleWidget (class in anfrss.gui.guiapp)" id="anfrss.gui.guiapp.TitleWidget" ref="anfrss.gui.html#anfrss.gui.guiapp.TitleWidget"/>
+        </keywords>
+        <files>
+            <file>anfrss.gui.html</file>
+            <file>anfrss.html</file>
+            <file>anfrss.parser.html</file>
+            <file>genindex.html</file>
+            <file>index.html</file>
+            <file>modules.html</file>
+            <file>py-modindex.html</file>
+            <file>_static/basic.css</file>
+            <file>_static/file.png</file>
+            <file>_static/minus.png</file>
+            <file>_static/nonav.css</file>
+            <file>_static/plus.png</file>
+            <file>_static/pygments.css</file>
+        </files>
+    </filterSection>
+</QtHelpProject>

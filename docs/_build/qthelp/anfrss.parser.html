@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>anfrss.parser package</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nonav.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="anfrss-parser-package">
+<h1>anfrss.parser package</h1>
+<div class="section" id="submodules">
+<h2>Submodules</h2>
+</div>
+<div class="section" id="anfrss-parser-anffeed-module">
+<h2>anfrss.parser.anffeed module</h2>
+<p>Core Module of package.
+Supports several languages:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>English</p></li>
+<li><p>German</p></li>
+<li><p>Kurmanji</p></li>
+<li><p>Spanish</p></li>
+</ul>
+</div></blockquote>
+<p>( More languages available soon. )</p>
+<dl class="field-list simple">
+<dt class="field-odd">class</dt>
+<dd class="field-odd"><p>ANFFeed</p>
+</dd>
+</dl>
+<p>See docs of containing class/es
+to learn more about.</p>
+<dl class="py class">
+<dt id="anfrss.parser.anffeed.ANFFeed">
+<em class="property">class </em><code class="sig-prename descclassname">anfrss.parser.anffeed.</code><code class="sig-name descname">ANFFeed</code></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<blockquote>
+<div><p>ANF Feed Parser</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>source</strong> (<em>str</em>) – Link to set;
+Depending on chosen
+Language;</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt id="anfrss.parser.anffeed.ANFFeed.source">
+<code class="sig-name descname">source</code><em class="property"> = 'https://anfenglishmobile.com/feed.rss'</em></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.set_language">
+<em class="property">classmethod </em><code class="sig-name descname">set_language</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">language</span></em><span class="sig-paren">)</span></dt>
+<dd><blockquote>
+<div><p>Set language of link</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>language</strong> (<em>str</em>) – Language to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.title">
+<em class="property">property </em><code class="sig-name descname">title</code></dt>
+<dd><p>Titles Attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.summary">
+<em class="property">property </em><code class="sig-name descname">summary</code></dt>
+<dd><p>Summary Attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.detailed">
+<em class="property">property </em><code class="sig-name descname">detailed</code></dt>
+<dd><p>Detailed Attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.link">
+<em class="property">property </em><code class="sig-name descname">link</code></dt>
+<dd><p>Links Attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.all_feeds">
+<em class="property">property </em><code class="sig-name descname">all_feeds</code></dt>
+<dd><p>All Feeds Attribute</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="anfrss.parser.anffeed.ANFFeed.download_article">
+<code class="sig-name descname">download_article</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">ident</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">file</span><span class="o">=</span><span class="default_value">'html'</span></em><span class="sig-paren">)</span></dt>
+<dd><blockquote>
+<div><p>Download Article</p>
+</div></blockquote>
+<p>Requests a chosen article
+and writes it to a file
+(default: HTML).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ident</strong> (<em>str</em>) – Identifier;
+Can be link or title
+which will identify
+the article to down-
+load</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – Directory
+to write to</p></li>
+<li><p><strong>file</strong> (<em>str</em><em>, </em><em>default</em>) – The desired
+file type to write</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-anfrss.parser">
+<span id="module-contents"></span><h2>Module contents</h2>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

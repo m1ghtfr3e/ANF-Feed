@@ -21,10 +21,10 @@ Requires = [
 
 setuptools.setup(
     name='ANF-Feed',
-    version='0.0.1',
+    version='0.0.2',
     author='m1ghtfr3e',
     description='Read ANF Feeds',
-    keywords='anf, feed, rss',
+    keywords='anf, feed, rss, rojava',
     long_description=long_description,
     url='https://github.com/m1ghtfr3e/ANF-Feed-Reader',
     packages=setuptools.find_packages(),
@@ -49,6 +49,7 @@ setuptools.setup(
     python_requires='>=3',
     project_urls={
         'Source': 'https://github.com/m1ghtfr3e/ANF-Feed-Reader',
-        'Bug Reports': 'https://github.com/m1ghtfr3e/ANF-Feed-Reader/issues'
+        'Bug Reports': 'https://github.com/m1ghtfr3e/ANF-Feed-Reader/issues',
+        'PyPi Project Site': 'https://pypi.org/project/ANF-Feed/',
     }
 )

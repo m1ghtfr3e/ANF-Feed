@@ -1,6 +1,6 @@
 '''
-    GUI Module for ANF Feed Reader
-    ==============================
+GUI Module for ANF Feed Reader
+##############################
 
 The run() - Function is the main function.
 It is also imported by the __init__ so
@@ -59,7 +59,8 @@ DIR = Path(__file__).parents[1]
 
 class ArticleWidget(QWidget):
     '''
-        Article Widget
+    Article Widget
+    ==============
 
     This widget is holding a
     :class: QTextEdit
@@ -77,23 +78,53 @@ class ArticleWidget(QWidget):
         '''
         Defines UI of the
         :class: ArticleWidget
+
+        The Layout is a
+        :class: QVBoxLayout
+
+        There is a
+        :class: QLabel over
+        the Text Box
+
+        Central Widget of this
+        class is the
+        :class: QTextEdit
+            - Read-onldy so user
+              can not change or
+              delete text by acci-
+              dent
+             - Font is set to:
+               Times, and size 12
+        Text to the QTextEdit is
+        added in the
+        :class: ANFApp:
+            It catches the signal
+            if a title is clicked
+            and appends the:
+                - Summary of the
+                    content
+                - Link of the article
+                - The article (just
+                    text, no pictures etc.)
         '''
         self.hbox = QVBoxLayout(self)
         self.setLayout(self.hbox)
 
-        self.label = QLabel('Your chosen Feed will be shown here:')
+        self.label = QLabel('Your chosen Feed (Summary, Link and Article):')
         self.hbox.addWidget(self.label)
 
         self.text = QTextEdit()
         self.text.setReadOnly(True)
         font = QFont('Times', 12)
         self.text.setFont(font)
+        self.text.setPlaceholderText('Click on a title to read the article')
         self.hbox.addWidget(self.text)
 
 
 class TitleWidget(QWidget):
     '''
-        Title Widget
+    Title Widget
+    ============
 
     This widget is presenting
     the Feed titles of the
@@ -118,11 +149,21 @@ class TitleWidget(QWidget):
         '''
         Defines UI of the
         :class: TitleWidget
+
+        The structure of this
+        Widget:
+
+        The Layout is a
+        :class: QVBoxLayout
+
+        :class: QLabel
+
+        :class: QListWidget
         '''
         self.hbox = QVBoxLayout()
         self.setLayout(self.hbox)
 
-        self.label = QLabel('Double Click on a title:')
+        self.label = QLabel('Titles of available Feeds:')
         self.hbox.addWidget(self.label)
 
         self.titleList = QListWidget()
@@ -132,8 +173,30 @@ class TitleWidget(QWidget):
 
     def newsFeed(self, language=None):
         '''
-            Set ANF Feeds
-        :class: ANFFeed
+        Set ANF Feeds
+        =============
+
+        This method is interacting
+        with the :class: ANFFeed
+        It is getting the RSS Feeds
+        and is representing the Titles
+        of each Feed.
+        Furthermore, it is changing
+        the language if the User is
+        interacting with the "Language"
+        option of the Menu.
+            -> See more in the
+            :class: ANFApp
+
+        :param language:
+            The language to be set
+            (The ANFFeed is setting
+            to English by default)
+            Default here is None, so
+            it is able to track if
+            a language was chosen by
+            the User or not
+        :type language: str, optional
         '''
         self.news = ANFFeed()
 
@@ -149,9 +212,17 @@ class TitleWidget(QWidget):
 
     def onClicked(self, item):
         '''
+        Emit Content
+        ============
         This method will be called
         on double click on one of
         the titles.
+        Depending on the Title
+        clicked on, it gets the
+        Summary, Link and the
+        article's text. After
+        the pyqtSignal TitleClicked
+        is emitting the content.
 
         :param item: Item contained
             by the article clicked on
@@ -171,7 +242,9 @@ class TitleWidget(QWidget):
 
 
 class ANFApp(QMainWindow):
-    ''' Main Window
+    '''
+    Main Window
+    ===========
 
     All other Widgets and
     Elements are organized.
@@ -257,7 +330,9 @@ class ANFApp(QMainWindow):
 
     def languageAction(self, lang):
         '''
-            Change Language
+        Change Language
+        ===============
+
         Changing the Language
         of the Feeds if Menu
         Option is hovered.
@@ -272,7 +347,9 @@ class ANFApp(QMainWindow):
 
     def title_click(self, feed):
         '''
-            Signal Catcher
+        Signal Catcher
+        ==============
+
         Catches the Slot Signal
         of the
         :class: TitleWidget
@@ -283,7 +360,7 @@ class ANFApp(QMainWindow):
             in the TitleWidget
             emits a list with
             the contents;
-        type feed: list
+        :type feed: list
         '''
         # Title = feed[0]
         # Link = feed[1]
@@ -304,13 +381,18 @@ class ANFApp(QMainWindow):
     def exit(self):
         '''
         Exit the Application
+        ====================
+
+        Called when Exit Button
+        is clicked.
         '''
         self.close()
 
 
 def run(*args):
     '''
-        Run the App
+    Run the App
+    ===========
 
     Default Style is set
     to "Breeze"

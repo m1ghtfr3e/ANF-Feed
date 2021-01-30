@@ -37,8 +37,10 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="anfrss-gui-guiapp-module">
-<h2>anfrss.gui.guiapp module<a class="headerlink" href="#anfrss-gui-guiapp-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-anfrss.gui.guiapp">
+<span id="anfrss-gui-guiapp-module"></span><h2>anfrss.gui.guiapp module<a class="headerlink" href="#module-anfrss.gui.guiapp" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="gui-module-for-anf-feed-reader">
+<h3>GUI Module for ANF Feed Reader<a class="headerlink" href="#gui-module-for-anf-feed-reader" title="Permalink to this headline">¶</a></h3>
 <p>The run() - Function is the main function.
 It is also imported by the __init__ so
 it can be used by the __main__ of the
@@ -80,9 +82,6 @@ the Github Repository:</p>
 <dt id="anfrss.gui.guiapp.ArticleWidget">
 <em class="property">class </em><code class="sig-prename descclassname">anfrss.gui.guiapp.</code><code class="sig-name descname">ArticleWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ArticleWidget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QWidget</span></code></p>
-<blockquote>
-<div><p>Article Widget</p>
-</div></blockquote>
 <p>This widget is holding a
 :class: QTextEdit
 as read-only, so there is
@@ -92,6 +91,51 @@ no edit enabled for the User.</p>
 <code class="sig-name descname">initUi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ArticleWidget.initUi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines UI of the
 :class: ArticleWidget</p>
+<p>The Layout is a
+:class: QVBoxLayout</p>
+<p>There is a
+:class: QLabel over
+the Text Box</p>
+<p>Central Widget of this
+class is the
+:class: QTextEdit</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Read-onldy so user
+can not change or
+delete text by acci-
+dent</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Font is set to:
+Times, and size 12</p></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>Text to the QTextEdit is
+added in the
+:class: ANFApp:</p>
+<blockquote>
+<div><p>It catches the signal
+if a title is clicked
+and appends the:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Summary of the</dt><dd><p>content</p>
+</dd>
+</dl>
+</li>
+<li><p>Link of the article</p></li>
+<li><dl class="simple">
+<dt>The article (just</dt><dd><p>text, no pictures etc.)</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
 </dd></dl>
 
 </dd></dl>
@@ -100,9 +144,6 @@ no edit enabled for the User.</p>
 <dt id="anfrss.gui.guiapp.TitleWidget">
 <em class="property">class </em><code class="sig-prename descclassname">anfrss.gui.guiapp.</code><code class="sig-name descname">TitleWidget</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.TitleWidget" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QWidget</span></code></p>
-<blockquote>
-<div><p>Title Widget</p>
-</div></blockquote>
 <p>This widget is presenting
 the Feed titles of the
 :class: ANFFeed ;
@@ -122,17 +163,45 @@ the linked feed in the
 <code class="sig-name descname">initUi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.TitleWidget.initUi" title="Permalink to this definition">¶</a></dt>
 <dd><p>Defines UI of the
 :class: TitleWidget</p>
+<p>The structure of this
+Widget:</p>
+<p>The Layout is a
+:class: QVBoxLayout</p>
+<dl class="field-list simple">
+<dt class="field-odd">Class</dt>
+<dd class="field-odd"><p>QLabel</p>
+</dd>
+<dt class="field-even">Class</dt>
+<dd class="field-even"><p>QListWidget</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
 <dt id="anfrss.gui.guiapp.TitleWidget.newsFeed">
 <code class="sig-name descname">newsFeed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">language</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.TitleWidget.newsFeed" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Set ANF Feeds</p>
+<dd><p>This method is interacting
+with the :class: ANFFeed
+It is getting the RSS Feeds
+and is representing the Titles
+of each Feed.
+Furthermore, it is changing
+the language if the User is
+interacting with the “Language”
+option of the Menu.</p>
+<blockquote>
+<div><p>-&gt; See more in the
+:class: ANFApp</p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Class</dt>
-<dd class="field-odd"><p>ANFFeed</p>
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>language</strong> (<em>str</em><em>, </em><em>optional</em>) – The language to be set
+(The ANFFeed is setting
+to English by default)
+Default here is None, so
+it is able to track if
+a language was chosen by
+the User or not</p>
 </dd>
 </dl>
 </dd></dl>
@@ -142,7 +211,13 @@ the linked feed in the
 <code class="sig-name descname">onClicked</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">item</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.TitleWidget.onClicked" title="Permalink to this definition">¶</a></dt>
 <dd><p>This method will be called
 on double click on one of
-the titles.</p>
+the titles.
+Depending on the Title
+clicked on, it gets the
+Summary, Link and the
+article’s text. After
+the pyqtSignal TitleClicked
+is emitting the content.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>item</strong> (<em>PyQt Obj</em>) – Item contained
@@ -157,7 +232,6 @@ by the article clicked on</p>
 <dt id="anfrss.gui.guiapp.ANFApp">
 <em class="property">class </em><code class="sig-prename descclassname">anfrss.gui.guiapp.</code><code class="sig-name descname">ANFApp</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ANFApp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PyQt5.QtWidgets.QMainWindow</span></code></p>
-<p>Main Window</p>
 <p>All other Widgets and
 Elements are organized.</p>
 <dl class="simple">
@@ -174,6 +248,20 @@ Elements are organized.</p>
 </dd>
 </dl>
 </li>
+</ul>
+</dd>
+<dt>General Layout:</dt><dd><ul class="simple">
+<li><p>QStatusBar</p></li>
+<li><dl class="simple">
+<dt>QSplitter()</dt><dd><ul>
+<li><p>TitleWidget</p></li>
+<li><p>ArticleWidget</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>QMenuBar</p></li>
+<li><p>QPushButton (Exit)</p></li>
 </ul>
 </dd>
 </dl>
@@ -200,10 +288,7 @@ Moreover there is:
 <dl class="py method">
 <dt id="anfrss.gui.guiapp.ANFApp.languageAction">
 <code class="sig-name descname">languageAction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lang</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ANFApp.languageAction" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Change Language</p>
-</div></blockquote>
-<p>Changing the Language
+<dd><p>Changing the Language
 of the Feeds if Menu
 Option is hovered.</p>
 <dl class="field-list simple">
@@ -217,43 +302,38 @@ Text given by Menu Option</p>
 <dl class="py method">
 <dt id="anfrss.gui.guiapp.ANFApp.title_click">
 <code class="sig-name descname">title_click</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">feed</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ANFApp.title_click" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Signal Catcher</p>
-</div></blockquote>
-<p>Catches the Slot Signal
+<dd><p>Catches the Slot Signal
 of the
 :class: TitleWidget
 and sets the Text for the
 :class: ArticleWidget;</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>feed</strong> – The Signal
+<dd class="field-odd"><p><strong>feed</strong> (<em>list</em>) – The Signal
 in the TitleWidget
 emits a list with
 the contents;</p>
 </dd>
 </dl>
-<p>type feed: list</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="anfrss.gui.guiapp.ANFApp.exit">
 <code class="sig-name descname">exit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.ANFApp.exit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Exit the Application</p>
+<dd><p>Called when Exit Button
+is clicked.</p>
 </dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt id="anfrss.gui.guiapp.run">
-<code class="sig-prename descclassname">anfrss.gui.guiapp.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.run" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Run the App</p>
-</div></blockquote>
-<p>Default Style is set
+<code class="sig-prename descclassname">anfrss.gui.guiapp.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em><span class="sig-paren">)</span><a class="headerlink" href="#anfrss.gui.guiapp.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default Style is set
 to “Breeze”</p>
 </dd></dl>
 
+</div>
 </div>
 <div class="section" id="module-anfrss.gui">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-anfrss.gui" title="Permalink to this headline">¶</a></h2>

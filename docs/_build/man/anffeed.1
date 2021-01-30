@@ -1,0 +1,553 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "ANFFEED" "1" "Jan 30, 2021" "" "ANF Feed"
+.SH NAME
+anffeed \- ANF Feed 0.0.1.dev3
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.SH ANFRSS
+.SS anfrss package
+.SS Subpackages
+.SS anfrss.gui package
+.SS Submodules
+.SS anfrss.gui.guiapp module
+.sp
+The run() \- Function is the main function.
+It is also imported by the __init__ so
+it can be used by the __main__ of the
+package.
+.INDENT 0.0
+.TP
+.B This package is licensed under:
+– GNU General Public License v3.0 –
+.UNINDENT
+.sp
+For more informations, reading the License,
+contributing and else you may visit
+the Github Repository:
+.INDENT 0.0
+.INDENT 3.5
+–> \fI\%https://github.com/m1ghtfr3e/ANF\-Feed\-Reader\fP
+.INDENT 0.0
+.TP
+.B Containing classes:
+.INDENT 7.0
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B class
+ANFApp
+.UNINDENT
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B class
+ArticleWidget
+.UNINDENT
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B class
+TitleWidget
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class anfrss.gui.guiapp.ArticleWidget(*args)
+Bases: \fBPyQt5.QtWidgets.QWidget\fP
+.INDENT 7.0
+.INDENT 3.5
+Article Widget
+.UNINDENT
+.UNINDENT
+.sp
+This widget is holding a
+:class: QTextEdit
+as read\-only, so there is
+no edit enabled for the User.
+.INDENT 7.0
+.TP
+.B initUi()
+Defines UI of the
+:class: ArticleWidget
+.sp
+The Layout is a
+:class: QVBoxLayout
+.sp
+There is a
+:class: QLabel over
+the Text Box
+.sp
+Central Widget of this
+class is the
+:class: QTextEdit
+.INDENT 7.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+Read\-onldy so user
+can not change or
+delete text by acci\-
+dent
+.UNINDENT
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+Font is set to:
+Times, and size 12
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Text to the QTextEdit is
+added in the
+:class: ANFApp:
+.INDENT 7.0
+.INDENT 3.5
+It catches the signal
+if a title is clicked
+and appends the:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B Summary of the
+content
+.UNINDENT
+.IP \(bu 2
+Link of the article
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B The article (just
+text, no pictures etc.)
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class anfrss.gui.guiapp.TitleWidget(*args)
+Bases: \fBPyQt5.QtWidgets.QWidget\fP
+.INDENT 7.0
+.INDENT 3.5
+Title Widget
+.UNINDENT
+.UNINDENT
+.sp
+This widget is presenting
+the Feed titles of the
+:class: ANFFeed ;
+It is also containing a
+:class: pyqtSignal
+on double click which will
+be responsible to present
+the linked feed in the
+:class: ArticleWidget
+.INDENT 7.0
+.TP
+.B TitleClicked
+.UNINDENT
+.INDENT 7.0
+.TP
+.B initUi()
+Defines UI of the
+:class: TitleWidget
+.sp
+The structure of this
+Widget:
+.sp
+The Layout is a
+:class: QVBoxLayout
+.INDENT 7.0
+.TP
+.B Class
+QLabel
+.TP
+.B Class
+QListWidget
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B newsFeed(language=None)
+.INDENT 7.0
+.INDENT 3.5
+Set ANF Feeds
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Class
+ANFFeed
+.UNINDENT
+.sp
+This method is interacting
+with the :class: ANFFeed
+It is getting the RSS Feeds
+and is representing the Titles
+of each Feed.
+Furthermore, it is changing
+the language if the User is
+interacting with the “Language”
+option of the Menu.
+.INDENT 7.0
+.INDENT 3.5
+\-> See more in the
+:class: ANFApp
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Parameters
+\fBlanguage\fP (\fIstr\fP\fI, \fP\fIoptional\fP) – The language to be set
+(The ANFFeed is setting
+to English by default)
+Default here is None, so
+it is able to track if
+a language was chosen by
+the User or not
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B onClicked(item)
+.INDENT 7.0
+.INDENT 3.5
+Emit Content
+.UNINDENT
+.UNINDENT
+.sp
+This method will be called
+on double click on one of
+the titles.
+Depending on the Title
+clicked on, it gets the
+Summary, Link and the
+article’s text. After
+the pyqtSignal TitleClicked
+is emitting the content.
+.INDENT 7.0
+.TP
+.B Parameters
+\fBitem\fP (\fIPyQt Obj\fP) – Item contained
+by the article clicked on
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B class anfrss.gui.guiapp.ANFApp(*args)
+Bases: \fBPyQt5.QtWidgets.QMainWindow\fP
+.INDENT 7.0
+.INDENT 3.5
+Main Window
+.UNINDENT
+.UNINDENT
+.sp
+All other Widgets and
+Elements are organized.
+.INDENT 7.0
+.TP
+.B Referring objets:
+.INDENT 7.0
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B class
+TitleWidget
+.UNINDENT
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B class
+ArticleWidget
+.UNINDENT
+.UNINDENT
+.TP
+.B General Layout:
+.INDENT 7.0
+.IP \(bu 2
+QStatusBar
+.IP \(bu 2
+.INDENT 2.0
+.TP
+.B QSplitter()
+.INDENT 7.0
+.IP \(bu 2
+TitleWidget
+.IP \(bu 2
+ArticleWidget
+.UNINDENT
+.UNINDENT
+.IP \(bu 2
+QMenuBar
+.IP \(bu 2
+QPushButton (Exit)
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B anfInit()
+.INDENT 7.0
+.INDENT 3.5
+Defines UI of the
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Class
+ANFApp
+(Main Window)
+.UNINDENT
+.sp
+Both, the Article
+and the Title Widget
+are organized inside
+:class: QSplitter
+Moreover there is:
+:class: QMenuBar
+:class: QPushButton
+.INDENT 7.0
+.INDENT 3.5
+(Exit Button)
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B languageAction(lang)
+.INDENT 7.0
+.INDENT 3.5
+Change Language
+.UNINDENT
+.UNINDENT
+.sp
+Changing the Language
+of the Feeds if Menu
+Option is hovered.
+.INDENT 7.0
+.TP
+.B Parameters
+\fBlang\fP (\fIPyQt obj\fP) – The Language
+Text given by Menu Option
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B title_click(feed)
+.INDENT 7.0
+.INDENT 3.5
+Signal Catcher
+.UNINDENT
+.UNINDENT
+.sp
+Catches the Slot Signal
+of the
+:class: TitleWidget
+and sets the Text for the
+:class: ArticleWidget;
+.INDENT 7.0
+.TP
+.B Parameters
+\fBfeed\fP – The Signal
+in the TitleWidget
+emits a list with
+the contents;
+.UNINDENT
+.sp
+type feed: list
+.UNINDENT
+.INDENT 7.0
+.TP
+.B exit()
+Exit the Application
+.UNINDENT
+.UNINDENT
+.INDENT 0.0
+.TP
+.B anfrss.gui.guiapp.run(*args)
+.INDENT 7.0
+.INDENT 3.5
+Run the App
+.UNINDENT
+.UNINDENT
+.sp
+Default Style is set
+to “Breeze”
+.UNINDENT
+.SS Module contents
+.SS anfrss.parser package
+.SS Submodules
+.SS anfrss.parser.anffeed module
+.sp
+Core Module of package.
+Supports several languages:
+.INDENT 0.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+English
+.IP \(bu 2
+German
+.IP \(bu 2
+Kurmanji
+.IP \(bu 2
+Spanish
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+( More languages available soon. )
+.INDENT 0.0
+.TP
+.B class
+ANFFeed
+.UNINDENT
+.sp
+See docs of containing class/es
+to learn more about.
+.INDENT 0.0
+.TP
+.B class anfrss.parser.anffeed.ANFFeed
+Bases: \fBobject\fP
+.INDENT 7.0
+.INDENT 3.5
+ANF Feed Parser
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Parameters
+\fBsource\fP (\fIstr\fP) – Link to set;
+Depending on chosen
+Language;
+.UNINDENT
+.INDENT 7.0
+.TP
+.B source = \(aqhttps://anfenglishmobile.com/feed.rss\(aq
+.UNINDENT
+.INDENT 7.0
+.TP
+.B classmethod set_language(language)
+.INDENT 7.0
+.INDENT 3.5
+Set language of link
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B Parameters
+\fBlanguage\fP (\fIstr\fP) – Language to set
+.UNINDENT
+.UNINDENT
+.INDENT 7.0
+.TP
+.B property title
+Titles Attribute
+.UNINDENT
+.INDENT 7.0
+.TP
+.B property summary
+Summary Attribute
+.UNINDENT
+.INDENT 7.0
+.TP
+.B property detailed
+Detailed Attribute
+.UNINDENT
+.INDENT 7.0
+.TP
+.B property link
+Links Attribute
+.UNINDENT
+.INDENT 7.0
+.TP
+.B property all_feeds
+All Feeds Attribute
+.UNINDENT
+.INDENT 7.0
+.TP
+.B download_article(ident, target, file=\(aqhtml\(aq)
+.INDENT 7.0
+.INDENT 3.5
+Download Article
+.UNINDENT
+.UNINDENT
+.sp
+Requests a chosen article
+and writes it to a file
+(default: HTML).
+.INDENT 7.0
+.TP
+.B Parameters
+.INDENT 7.0
+.IP \(bu 2
+\fBident\fP (\fIstr\fP) – Identifier;
+Can be link or title
+which will identify
+the article to down\-
+load
+.IP \(bu 2
+\fBtarget\fP (\fIstr\fP) – Directory
+to write to
+.IP \(bu 2
+\fBfile\fP (\fIstr\fP\fI, \fP\fIdefault\fP) – The desired
+file type to write
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.SS Module contents
+.SS Module contents
+.INDENT 0.0
+.IP \(bu 2
+genindex
+.IP \(bu 2
+modindex
+.IP \(bu 2
+search
+.UNINDENT
+.SH AUTHOR
+m1ghtfr3e
+.SH COPYRIGHT
+2021, m1ghtfr3e
+.\" Generated by docutils manpage writer.
+.
