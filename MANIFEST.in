@@ -1,2 +1,4 @@
 include requirements.txt
 include anfrss/assets/anf.png
+
+exclude TODO.md

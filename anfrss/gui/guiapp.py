@@ -21,7 +21,7 @@ the Github Repository:
     - :class: ArticleWidget
     - :class: TitleWidget
 '''
-
+import logging
 import sys
 from pathlib import Path
 from PyQt5.QtWidgets import (QApplication,
@@ -57,6 +57,11 @@ except ImportError:
 DIR = Path(__file__).parents[1]
 
 
+# Set up Logging
+LOGGER = logging.getLogger(__name__)
+LOGGER.setLevel(logging.DEBUG)
+
+
 class ArticleWidget(QWidget):
     '''
     Article Widget
@@ -67,14 +72,14 @@ class ArticleWidget(QWidget):
     as read-only, so there is
     no edit enabled for the User.
     '''
-    def __init__(self, *args):
+    def __init__(self, *args) -> None:
         super().__init__(*args)
 
         self.setGeometry(0, 0, 400, 600)
 
         self.initUi()
 
-    def initUi(self):
+    def initUi(self) -> None:
         '''
         Defines UI of the
         :class: ArticleWidget
@@ -138,14 +143,14 @@ class TitleWidget(QWidget):
     '''
     TitleClicked = pyqtSignal([list])
 
-    def __init__(self, *args):
+    def __init__(self, *args) -> None:
         super().__init__(*args)
 
         self.setGeometry(0, 0, 350, 600)
 
         self.initUi()
 
-    def initUi(self):
+    def initUi(self) -> None:
         '''
         Defines UI of the
         :class: TitleWidget
@@ -171,7 +176,7 @@ class TitleWidget(QWidget):
 
         self.newsFeed()
 
-    def newsFeed(self, language=None):
+    def newsFeed(self, language: str = None) -> None:
         '''
         Set ANF Feeds
         =============
@@ -210,7 +215,7 @@ class TitleWidget(QWidget):
             self.titleList.setFont(font)
         self.hbox.addWidget(self.titleList)
 
-    def onClicked(self, item):
+    def onClicked(self, item) -> None:
         '''
         Emit Content
         ============
@@ -261,7 +266,7 @@ class ANFApp(QMainWindow):
         - QMenuBar
         - QPushButton (Exit)
     '''
-    def __init__(self, *args):
+    def __init__(self, *args) -> None:
         super().__init__(*args)
 
         self.setWindowState(Qt.WindowMaximized)
@@ -274,7 +279,7 @@ class ANFApp(QMainWindow):
 
         self.show()
 
-    def anfInit(self):
+    def anfInit(self) -> None:
         '''
         Defines UI of the
         :class: ANFApp
@@ -328,7 +333,7 @@ class ANFApp(QMainWindow):
 
         self.show()
 
-    def languageAction(self, lang):
+    def languageAction(self, lang) -> None:
         '''
         Change Language
         ===============
@@ -345,7 +350,7 @@ class ANFApp(QMainWindow):
         self.title_widget.newsFeed(lang.text())
         self.title_widget.update()
 
-    def title_click(self, feed):
+    def title_click(self, feed: list) -> None:
         '''
         Signal Catcher
         ==============
@@ -378,7 +383,7 @@ class ANFApp(QMainWindow):
         self.article_widget.text.append('\n\n')
         self.article_widget.text.append(feed[2])
 
-    def exit(self):
+    def exit(self) -> None:
         '''
         Exit the Application
         ====================
@@ -389,7 +394,7 @@ class ANFApp(QMainWindow):
         self.close()
 
 
-def run(*args):
+def run(*args) -> None:
     '''
     Run the App
     ===========

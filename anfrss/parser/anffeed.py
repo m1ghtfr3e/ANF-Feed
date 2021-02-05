@@ -42,7 +42,7 @@ class ANFFeed:
 
     source = ENGLISH
 
-    def __init__(self):
+    def __init__(self) -> None:
         try:
             self.feed = feedparser.parse(self.source)
         except NameError:
@@ -51,7 +51,7 @@ class ANFFeed:
         self.entries = self.feed.entries
 
     @classmethod
-    def set_language(cls, language):
+    def set_language(cls, language: str) -> None:
         '''
         Set language of link
         ====================
@@ -76,7 +76,7 @@ class ANFFeed:
             raise NotImplementedError()
 
     @property
-    def title(self):
+    def title(self) -> None:
         '''
         Titles Attribute
         ================
@@ -87,7 +87,7 @@ class ANFFeed:
         return titles
 
     @property
-    def summary(self):
+    def summary(self) -> None:
         '''
         Summary Attribute
         =================
@@ -98,7 +98,7 @@ class ANFFeed:
         return summary
 
     @property
-    def detailed(self):
+    def detailed(self) -> None:
         '''
         Detailed Attribute
         ==================
@@ -111,7 +111,7 @@ class ANFFeed:
         return detailed
 
     @property
-    def link(self):
+    def link(self) -> None:
         '''
         Links Attribute
         ===============
@@ -122,7 +122,7 @@ class ANFFeed:
         return links
 
     @property
-    def all_feeds(self):
+    def all_feeds(self) -> None:
         '''
         All Feeds Attribute
         ===================
