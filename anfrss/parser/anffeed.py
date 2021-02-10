@@ -167,8 +167,11 @@ class ANFFeed:
         raise NotImplementedError()
 
     def __repr__(self):
-        return f'{self.__class__.__name__}, {self.source!r}'
+        return (f'Spider: {self.__class__.__name__}\n'
+                f'URL: {self.source!r}\n'
+                f'Available articles: {len(self.entries)}\n'
+                )
 
 
 if __name__ == '__main__':
-    pass
+    ...

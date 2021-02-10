@@ -1,0 +1,25 @@
+name: anfrss
+version: git
+summary: ANFFeeds
+description: |
+        Fetch and Read ANF Feeds and articles on your desktop.
+base: core18
+confinement: devmode
+
+
+parts:
+        anfrss:
+                plugin: python
+                python-version: python3
+                source: .
+                python-packages:
+                        - feedparser
+                        - requests
+                        - PyQt5
+                        - qdarkstyle
+                        - libfreetype6
+                        - libpng16-16
+
+apps:
+        anfrss:
+                command: bin/anfrss
