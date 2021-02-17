@@ -1,0 +1,12 @@
+# Development Environment
+venv/
+TODO.md 
+
+# Byte - Compiled
+__pycache__/
+*.py[cod]
+
+# Distribution / Packaging
+dist/
+ANF_Feed.egg-info/
+build/
