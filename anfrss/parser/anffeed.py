@@ -129,14 +129,13 @@ class ANFFeed:
         '''
         return list(zip(self.title, self.summary, self.link, self.detailed))
 
-    def download_article(self, ident, target, file='html'):
+    def download_article(self, ident, target):
         '''
         Download Article
         ===============
 
         Requests a chosen article
         and writes it to a file
-        (default: HTML).
 
         :param ident: Identifier;
             Can be link or title
@@ -147,24 +146,22 @@ class ANFFeed:
         :param target: Directory
             to write to
         :type target: str
-        :param file: The desired
-            file type to write
-        :type file: str, default
         '''
-
-        import requests
-
-        # Try first if ident is a link
-        # If not it's the title
-        try:
-            content = requests.get(ident)
-            print(content)
-        except Exception as missing_schema:
-            print(missing_schema)
-        finally:
-            pass
-
-        raise NotImplementedError()
+        query = self.entries[ident]
+        result = query.content[0]['value']
+        result = HTML_TAG.sub('', result)
+        link = self.link[ident]
+        title = self.title[ident]
+        
+        file_name = target + title + '.txt'
+        with open(file_name, 'a') as f:
+            f.write(title)
+            f.write('\n\n')
+            f.write(link)
+            f.write('\n\n')
+            f.write(result)
+        return f'\n{title} written succesfully to {target}.\n'
+    
 
     def __repr__(self):
         return (f'Spider: {self.__class__.__name__}\n'
@@ -174,4 +171,5 @@ class ANFFeed:
 
 
 if __name__ == '__main__':
-    ...
+    anf = ANFFeed()
+    article = anf.download_article(1, '/home/n0name/')
