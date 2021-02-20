@@ -21,6 +21,7 @@ the Github Repository:
     - :class: ArticleWidget
     - :class: TitleWidget
 '''
+
 import logging
 import sys
 from pathlib import Path
@@ -55,11 +56,6 @@ except ImportError:
 
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
-
-
-# Set up Logging
-LOGGER = logging.getLogger(__name__)
-LOGGER.setLevel(logging.DEBUG)
 
 
 class ArticleWidget(QWidget):
@@ -302,13 +298,18 @@ class ANFApp(QMainWindow):
         self.setCentralWidget(self.central_widget)
 
         self.menu_bar = QMenuBar()
+
         self.actionEdit = self.menu_bar.addMenu('Edit')
         self.actionEdit.addAction('Size +')
         self.actionEdit.addAction('Size -')
         self.actionEdit.addSeparator()
         self.actionEdit.addAction('Settings')
+        
         self.actionDownload = self.menu_bar.addMenu('Download')
+        self.actionDownload.hovered.connect(self.download_article)
+
         self.actionHelp = self.menu_bar.addMenu('Help')
+        
         self.actionLang = self.menu_bar.addMenu('Language')
         self.actionLang.addAction('german')
         self.actionLang.addAction('english')
@@ -316,8 +317,8 @@ class ANFApp(QMainWindow):
         self.actionLang.addAction('spanish')
         self.actionLang.addAction('arab')
         self.actionLang.hovered.connect(self.languageAction)
+        
         self.central_widget.addWidget(self.menu_bar)
-
         self.central_widget.addWidget(self.title_widget)
         self.central_widget.addWidget(self.article_widget)
 
@@ -349,6 +350,14 @@ class ANFApp(QMainWindow):
         self.title_widget.titleList.clear()
         self.title_widget.newsFeed(lang.text())
         self.title_widget.update()
+
+    def download_article(self) -> None:
+        '''
+        Download Article
+        ================
+        '''
+        # Not available yet
+        ...
 
     def title_click(self, feed: list) -> None:
         '''
