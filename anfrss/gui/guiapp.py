@@ -57,6 +57,7 @@ except ImportError:
 # Get the current directory to set the Icon later.
 DIR = Path(__file__).parents[1]
 
+CURRENT = None
 
 class ArticleWidget(QWidget):
     '''
@@ -169,6 +170,7 @@ class TitleWidget(QWidget):
 
         self.titleList = QListWidget()
         self.titleList.itemPressed.connect(self.onClicked)
+        self.titleList.itemDoubleClicked.connect(self.onEnter)
 
         self.newsFeed()
 
@@ -234,6 +236,7 @@ class TitleWidget(QWidget):
         for elem in range(len(feeds)):
             if feeds[elem][0] == item.text():
                 id = elem
+                self.id = id
 
         summary = feeds[id][1] + '\n\n'
         link = feeds[id][2]
@@ -241,6 +244,9 @@ class TitleWidget(QWidget):
 
         self.TitleClicked.emit([summary, link, detailed])
 
+    def onEnter(self, item):
+        print(self.id)
+        self.news.download_article(self.id, '/home/n0name/Downloads/')
 
 class ANFApp(QMainWindow):
     '''
