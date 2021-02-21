@@ -22,7 +22,6 @@ the Github Repository:
     - :class: TitleWidget
 '''
 
-import logging
 import sys
 from pathlib import Path
 from PyQt5.QtWidgets import (QApplication,
@@ -35,14 +34,11 @@ from PyQt5.QtWidgets import (QApplication,
                              QTextEdit,
                              QSplitter,
                              QMenuBar,
-                             QScrollArea,
+                             QMessageBox,
                              )
 from PyQt5.QtGui import QIcon, QFont
 from PyQt5.QtCore import Qt, pyqtSignal
 
-# Import qdarkstyle
-# If not available
-#  -> just pass
 try:
     import qdarkstyle
 except ImportError:
@@ -54,10 +50,11 @@ try:
 except ImportError:
     from ..parser.anffeed import ANFFeed
 
-# Get the current directory to set the Icon later.
+# Get the Parent of the current directory
+# to set the Icon. 
+#
 DIR = Path(__file__).parents[1]
 
-CURRENT = None
 
 class ArticleWidget(QWidget):
     '''
@@ -245,8 +242,9 @@ class TitleWidget(QWidget):
         self.TitleClicked.emit([summary, link, detailed])
 
     def onEnter(self, item):
-        print(self.id)
-        self.news.download_article(self.id, '/home/n0name/Downloads/')
+        #self.news.download_article(self.id, '/home/n0name/Downloads/')
+        notify = QMessageBox()
+        self.hbox.addWidget(notify)
 
 class ANFApp(QMainWindow):
     '''
@@ -303,6 +301,14 @@ class ANFApp(QMainWindow):
 
         self.setCentralWidget(self.central_widget)
 
+        # Define Menu Bar
+        # Main Options:
+        #   - Edit 
+        #   - Settings 
+        #   - Download 
+        #   - Help 
+        #   - Language
+        #
         self.menu_bar = QMenuBar()
 
         self.actionEdit = self.menu_bar.addMenu('Edit')
@@ -315,7 +321,12 @@ class ANFApp(QMainWindow):
         self.actionDownload.hovered.connect(self.download_article)
 
         self.actionHelp = self.menu_bar.addMenu('Help')
-        
+
+        # Set / Change Language 
+        # The String of the Language names needs to be the
+        # same as the "set_language"- method in ANFFeed
+        # is expecting it as parameter
+        # 
         self.actionLang = self.menu_bar.addMenu('Language')
         self.actionLang.addAction('german')
         self.actionLang.addAction('english')
@@ -419,6 +430,9 @@ def run(*args) -> None:
     '''
     app = QApplication(sys.argv)
 
+    # Switch into Dark Mode 
+    # if it is part of command.
+    #
     for arg in args:
         if 'dark' in arg:
             app.setStyleSheet(qdarkstyle.load_stylesheet())
