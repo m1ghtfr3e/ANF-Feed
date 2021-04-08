@@ -1,3 +1,5 @@
+# -*- coding:utf-8 -*-
+
 '''
 GUI Module for ANF Feed Reader
 ##############################
@@ -51,10 +53,11 @@ except ImportError:
     from ..parser.anffeed import ANFFeed
 
 # Get the Parent of the current directory
-# to set the Icon. 
+# to set the Icon.
 #
 DIR = Path(__file__).parents[1]
 
+FEEDS = ANFFeed()
 
 class ArticleWidget(QWidget):
     '''
@@ -167,7 +170,6 @@ class TitleWidget(QWidget):
 
         self.titleList = QListWidget()
         self.titleList.itemPressed.connect(self.onClicked)
-        self.titleList.itemDoubleClicked.connect(self.onEnter)
 
         self.newsFeed()
 
@@ -198,7 +200,7 @@ class TitleWidget(QWidget):
             the User or not
         :type language: str, optional
         '''
-        self.news = ANFFeed()
+        self.news = FEEDS
 
         if language:
             self.news.set_language(language)
@@ -214,6 +216,7 @@ class TitleWidget(QWidget):
         '''
         Emit Content
         ============
+
         This method will be called
         on double click on one of
         the titles.
@@ -241,10 +244,6 @@ class TitleWidget(QWidget):
 
         self.TitleClicked.emit([summary, link, detailed])
 
-    def onEnter(self, item):
-        #self.news.download_article(self.id, '/home/n0name/Downloads/')
-        notify = QMessageBox()
-        self.hbox.addWidget(notify)
 
 class ANFApp(QMainWindow):
     '''
@@ -303,10 +302,10 @@ class ANFApp(QMainWindow):
 
         # Define Menu Bar
         # Main Options:
-        #   - Edit 
-        #   - Settings 
-        #   - Download 
-        #   - Help 
+        #   - Edit
+        #   - Settings
+        #   - Download
+        #   - Help
         #   - Language
         #
         self.menu_bar = QMenuBar()
@@ -318,7 +317,8 @@ class ANFApp(QMainWindow):
         self.actionEdit.addAction('Settings')
         
         self.actionDownload = self.menu_bar.addMenu('Download')
-        self.actionDownload.hovered.connect(self.download_article)
+        self.actionDownload.addAction('Download as Text file.')
+        self.actionDownload.triggered.connect(self.download_article)
 
         self.actionHelp = self.menu_bar.addMenu('Help')
 
@@ -373,7 +373,9 @@ class ANFApp(QMainWindow):
         Download Article
         ================
         '''
-        # Not available yet
+        download_dialog = QMessageBox(self)
+        download_dialog.setGeometry(0, 0, 800, 700)
+        download_dialog.exec_()
         ...
 
     def title_click(self, feed: list) -> None:
@@ -408,6 +410,11 @@ class ANFApp(QMainWindow):
         # Append Detailed
         self.article_widget.text.append('\n\n')
         self.article_widget.text.append(feed[2])
+
+        # Make sure that scroll bar starts at top
+        # because it is set to the widget area
+        # where the last line was appended.
+        self.article_widget.text.scrollToAnchor('https*')
 
     def exit(self) -> None:
         '''

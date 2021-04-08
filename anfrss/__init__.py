@@ -31,7 +31,9 @@ Visit the Github Repository
 or the PyPi Project Site.
 '''
 
-__version__ = '0.0.2.1'
-
 from .parser.anffeed import ANFFeed
 from .gui.guiapp import ANFApp
+
+__all__ = [ANFFeed, ANFApp]
+__version__ = '0.0.2.1'
+
