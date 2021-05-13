@@ -20,24 +20,32 @@ import re
 import feedparser
 
 
+# Define available Languages:
+# The specific link is assigned to.
 ENGLISH = 'https://anfenglishmobile.com/feed.rss'
 GERMAN = 'https://anfdeutsch.com/feed.rss'
 KURMANJI = 'https://anfkurdi.com/feed.rss'
 SPANISH = 'https://anfespanol.com/feed.rss'
 ARAB = 'https://anfarabic.com/feed.rss'
+
+# RegEx Tag
 HTML_TAG = re.compile(r'<[^>]+>')               # To remove HTML tags later
 
 
 class ANFFeed:
-    '''
-    ANF Feed Parser
-    ===============
+    ''' ANF Feed Parser
 
-    :param source:
+    This class fetches the news posts from
+    one of the links defined at the more up
+    (depending on the chosen language,
+    default="english").
+
+    Parameters
+    ----------
+    source : str
         Link to set;
         Depending on chosen
-        Language;
-    :type source: str
+        Language.
     '''
 
     source = ENGLISH
@@ -163,7 +171,7 @@ class ANFFeed:
         return f'\n{title} written succesfully to {target}.\n'
     
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return (f'Spider: {self.__class__.__name__}\n'
                 f'URL: {self.source!r}\n'
                 f'Available articles: {len(self.entries)}\n'
