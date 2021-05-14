@@ -21,7 +21,7 @@ Requires = [
 
 setuptools.setup(
     name='ANF-Feed',
-    version='0.0.2.1',
+    version='0.0.2.3',
     author='m1ghtfr3e',
     description='Read ANF Feeds',
     keywords='anf, feed, rss, rojava',
