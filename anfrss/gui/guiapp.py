@@ -57,7 +57,7 @@ except ImportError:
 #
 DIR = Path(__file__).parents[1]
 
-FEEDS = ANFFeed()
+# FEEDS = ANFFeed()
 
 class ArticleWidget(QWidget):
     '''
@@ -200,7 +200,7 @@ class TitleWidget(QWidget):
             the User or not
         :type language: str, optional
         '''
-        self.news = FEEDS
+        self.news = ANFFeed()
 
         if language:
             self.news.set_language(language)
